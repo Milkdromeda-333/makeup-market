@@ -13,10 +13,11 @@ module.exports = {
         }
       },
       fontFamily: {
-        brand: "Cinzel, serif",
-        regular: "Cormorant Garamond, serif;"
+        regular: ['Montserrat', "sans-serif"],
+        brand: "Cinzel, serif"
       }
     },
   },
   plugins: [],
+  mode: 'jit'
 };

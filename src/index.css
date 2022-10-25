@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&display=swap');
+
+@layer components {
+    .nav-items {
+        @apply p-3
+    }
+}
+
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1534008757030-27299c4371b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
+}
