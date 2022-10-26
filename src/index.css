@@ -1,14 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@400;600;700&display=swap');
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
     .nav-items {
         @apply p-3
+    }
+
+    #sign-up-form li {
+        @apply pl-2
+    }
+
+    #sign-up-form li:last-of-type {
+        @apply mb-0
+    }
+
+    #card-container {
+        @apply py-8
+    }
+
+    .cards {
+        @apply bg-black m-4 w-52 py-4 text-white rounded shadow-[0_0_0_] relative cursor-pointer
     }
 }
 
@@ -21,4 +36,48 @@
     box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
     -webkit-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
     -moz-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
+}
+
+#hero h2 {
+    text-shadow: 6px 6px 5px black;
+}
+
+li {
+    list-style: "💄";
+}
+
+
+#card-container h3 {
+    text-shadow: 2px 2px 5px black;
+}
+
+.cards {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: font-size 300ms ease-in-out;
+}
+
+.cards::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: .2rem;
+    background-color: white;
+
+    transform: scaleX(0);
+    transition: transform 100ms ease-in-out;
+}
+
+.cards:hover::before,
+.cards:focus::before {
+    transform: scaleX(1);
+}
+
+@media screen and (max-width:500px) {
+    .cards {
+        width: 60%;
+        margin-block: .5rem;
+        padding: .5rem;
+    }
 }

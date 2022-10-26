@@ -6,7 +6,6 @@ import Home from "./components/Home";
 /*
 
 TODO:
-[x] setup nav and footer (mobile-first) in Layout
 [] set up searchbar
 
 go back and do:
@@ -14,6 +13,8 @@ go back and do:
 [] add a secondary header to desktop nav
 [] imporve header
 [] add hover affect to nav icons that will start left to right
+[] add effect after submit for sign up form @ home
+[] add nav to footer
 
 */
 function App() {
