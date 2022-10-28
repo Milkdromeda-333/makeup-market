@@ -10,10 +10,10 @@ export default function DesktopNav() {
 
                 <div className="flex">
                     <Link to="/" className="p-5">
-                        <img src="https://img.icons8.com/laces/64/facc15/home.png" alt="home" className="w-8" />
+                        <img src="https://img.icons8.com/laces/64/facc15/home.png" alt="home" className="w-10" />
                     </Link>
                     <Link to="/saved" className="p-5">
-                        <img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/hearts---v2.png" alt="saved items" className="w-8" />
+                        <img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/hearts---v2.png" alt="saved items" className="w-10" />
                     </Link>
                 </div>
 
@@ -21,10 +21,10 @@ export default function DesktopNav() {
 
                 <div className="flex items-center pr-5">
                     <Link to="/shop">
-                        <img src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/FFFFFF/external-makeup-morning-routine-outline-outline-andi-nur-abdillah.png" alt="shop page" className="w-12" />
+                        <img src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/FFFFFF/external-makeup-morning-routine-outline-outline-andi-nur-abdillah.png" alt="shop page" className="w-10" />
                     </Link>
                     <Link to="/cart" className="p-5">
-                        <img src="https://img.icons8.com/laces/64/FFFFFF/shopping-cart.png" alt="cart" className="w-12" />
+                        <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/50/FFFFFF/external-Cart-shopping-those-icons-lineal-those-icons-2.png" alt="cart" className="w-10" />
                     </Link>
                 </div>
                 <div className="flex absolute right-8">

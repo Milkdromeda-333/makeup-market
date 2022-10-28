@@ -22,7 +22,7 @@ export default function Layout() {
 
     return (
 
-        <div className="flex flex-col h-full relative">
+        <div className="flex flex-col h-full relative min-h-[100vh]">
 
             {/* NAV */}
             <nav className="text-white w-full">
@@ -30,15 +30,15 @@ export default function Layout() {
             </nav>
 
             {/* OUTLET */}
-            <Outlet className="mb-16" />
+            <Outlet />
 
             {/* FOOTER */}
-            <footer className="bg-black text-white w-full border-t-2">
+            <footer className="bg-black text-white w-full border-t-2 mt-auto">
 
                 <div id="sign-up-form" className="flex flex-col justify-center items-center p-8 min-[1119px]:flex-row md:justify-center">
 
                     {/* SIGN UP */}
-                    <div className="flex flex-col justify-center items-center w-full md:flex-row md:justify-center md:items-end  lg:border-r-2">
+                    <div className="flex flex-col justify-center items-center w-full md:flex-row md:justify-center  lg:border-r-2">
                         <div className="mb-8 md:mb-0">
                             <h3 className="text-4xl pb-4 underline decoration-hot-pink-50">Sign up for:</h3>
                             <ul className="list-disc list-inside text-xl relative left-4">

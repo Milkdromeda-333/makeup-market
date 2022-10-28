@@ -1,9 +1,9 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@400;600;700&display=swap');
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer components {
     .nav-items {
@@ -22,8 +22,12 @@
         @apply py-8
     }
 
-    .cards {
+    .section-two-cards {
         @apply bg-black m-4 w-52 py-4 text-white rounded shadow-[0_0_0_] relative cursor-pointer
+    }
+
+    .title-style {
+        @apply text-white text-3xl font-bold
     }
 }
 
@@ -38,25 +42,32 @@
     -moz-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
 }
 
-#hero h2 {
+#hero h2,
+.title-style {
     text-shadow: 6px 6px 5px black;
 }
 
-li {
+footer li {
     list-style: "💄";
 }
 
 
-#card-container h3 {
+#card-container h3,
+#samples-title,
+.title-style {
     text-shadow: 2px 2px 5px black;
 }
 
-.cards {
+.section-two-cards {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    transition: font-size 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 
-.cards::before {
+.section-two-cards:hover {
+    color: #facc15;
+}
+
+.section-two-cards::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -69,13 +80,17 @@ li {
     transition: transform 100ms ease-in-out;
 }
 
-.cards:hover::before,
-.cards:focus::before {
+.section-two-cards:hover::before,
+.section-two-cards:focus::before {
     transform: scaleX(1);
 }
 
+.section-two-cards::hover img {
+    transform: scale(2);
+}
+
 @media screen and (max-width:500px) {
-    .cards {
+    .section-two-cards {
         width: 60%;
         margin-block: .5rem;
         padding: .5rem;

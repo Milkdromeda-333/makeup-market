@@ -1,7 +1,10 @@
 import { Routes, Route } from "react-router-dom";
+import { ProductsContext } from "./components/ProductsContext.jsx";
+import { UserShoppingContext } from "./components/UserShoppingContext.jsx";
 import Layout from "./components/Layout.jsx";
 import Shop from "./components/Shop";
 import Home from "./components/Home";
+import Saved from "./components/Saved.jsx";
 
 /*
 
@@ -20,14 +23,17 @@ go back and do:
 function App() {
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="shop" element={<Shop />} />
-        </Route>
-      </Routes>
-    </>
+    <ProductsContext>
+      <UserShoppingContext>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="saved" element={<Saved />} />
+          </Route>
+        </Routes>
+      </UserShoppingContext>
+    </ProductsContext>
   );
 }
 
