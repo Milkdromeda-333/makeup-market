@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const Context = createContext([]);
+const Context = createContext();
 
 function UserShoppingContext({ children }) {
     const [savedItems, setSavedItems] = useState([]);

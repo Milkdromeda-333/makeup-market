@@ -9,6 +9,7 @@ With this project I got the chance to practice:
 - creating a logo with CSS.
 - learning on the spot (implementing a functional search bar!)
 - responsive web design
+- Problem solving using google.
 
 I learned:
 - TO ACTUALLY GET THE FOOTER TO STICK TO THE BOTTOM USING MARGIN-TOP AUTO, AHH.

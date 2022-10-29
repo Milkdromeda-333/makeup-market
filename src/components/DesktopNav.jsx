@@ -6,24 +6,24 @@ export default function DesktopNav() {
 
     return (
         <>
-            <section className="flex items-center justify-center bg-black border-b-2 w-full">
+            <section className="flex flex-row items-center justify-center bg-black border-b-2 w-full p-4">
 
-                <div className="flex">
-                    <Link to="/" className="p-5">
+                <div className="flex flex-row justify-evenly gap-8">
+                    <Link to="/" className="">
                         <img src="https://img.icons8.com/laces/64/facc15/home.png" alt="home" className="w-10" />
                     </Link>
-                    <Link to="/saved" className="p-5">
+                    <Link to="/saved" className="">
                         <img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/hearts---v2.png" alt="saved items" className="w-10" />
                     </Link>
                 </div>
 
                 <Logo fs="30px" />
 
-                <div className="flex items-center pr-5">
+                <div className="flex flex-row justify-evenly items-center pr-5 gap-8">
                     <Link to="/shop">
                         <img src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/FFFFFF/external-makeup-morning-routine-outline-outline-andi-nur-abdillah.png" alt="shop page" className="w-10" />
                     </Link>
-                    <Link to="/cart" className="p-5">
+                    <Link to="/cart" className="">
                         <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/50/FFFFFF/external-Cart-shopping-those-icons-lineal-those-icons-2.png" alt="cart" className="w-10" />
                     </Link>
                 </div>

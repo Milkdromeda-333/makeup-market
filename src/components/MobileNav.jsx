@@ -17,7 +17,7 @@ export default function MobileNav({ navToggleFunc, isNavOpen }) {
 
             </div>
 
-            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center items-center bg-[#000000D9] backdrop-blur-sm pt-5 absolute w-full animate__animated animate__fadeInDown animate__faster`}>
+            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm absolute z-50 w-full animate__animated animate__fadeInDown animate__faster`}>
                 <Searchbar />
                 <Link to="/" className="nav-items">Home</Link>
                 <Link to="/saved" className="nav-items">Saved Items</Link>

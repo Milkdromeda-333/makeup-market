@@ -13,9 +13,12 @@ export default function Home() {
         for (let i = 0; i < 3; i++) {
             indices.push(Math.floor(Math.random() * products.length));
         }
-
         return indices.map(index => <ProductCard {...products[index]} key={products[index].id} />);
     };
+
+    // useEffect(() => {
+    //     console.log(products[0]);
+    // }, [products]);
 
     return (
         <>
