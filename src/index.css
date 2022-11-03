@@ -22,12 +22,16 @@
         @apply py-8
     }
 
-    .section-two-cards {
-        @apply bg-black m-4 w-52 py-4 text-white rounded shadow-[0_0_0_] relative cursor-pointer
+    .sm-product-card-label {
+        @apply bg-black m-4 w-52 py-4 text-white rounded shadow-[0_0_0_] relative
     }
 
     .title-style {
         @apply text-white text-3xl font-bold
+    }
+
+    .shop-card {
+        @apply bg-black text-white py-16 w-1/4 font-bold rounded shadow-[0_0_0_] text-xl relative
     }
 }
 
@@ -40,6 +44,11 @@
     box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
     -webkit-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
     -moz-box-shadow: 1px 14px 42px -7px rgba(0, 0, 0, 0.75) inset;
+}
+
+.classic-button {
+    color: white;
+    background-color: black;
 }
 
 #hero h2,
@@ -58,16 +67,18 @@ footer li {
     text-shadow: 2px 2px 5px black;
 }
 
-.section-two-cards {
+.sm-product-card-label {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transition: all 300ms ease-in-out;
 }
 
-.section-two-cards:hover {
+.sm-product-card-label:hover,
+.shop-card:hover {
     color: #facc15;
 }
 
-.section-two-cards::before {
+.sm-product-card-label::before,
+.shop-card::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -80,17 +91,18 @@ footer li {
     transition: transform 100ms ease-in-out;
 }
 
-.section-two-cards:hover::before,
-.section-two-cards:focus::before {
+.sm-product-card-label:hover::before,
+.sm-product-card-label:focus::before,
+.shop-card:hover::before {
     transform: scaleX(1);
 }
 
-.section-two-cards::hover img {
+.sm-product-card-label::hover img {
     transform: scale(2);
 }
 
 @media screen and (max-width:500px) {
-    .section-two-cards {
+    .sm-product-card-label {
         width: 60%;
         margin-block: .5rem;
         padding: .5rem;

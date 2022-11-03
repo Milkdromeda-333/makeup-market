@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "./ProductsContext";
 import ProductCard from "./ProductCard";
 
@@ -16,16 +16,12 @@ export default function Home() {
         return indices.map(index => <ProductCard {...products[index]} key={products[index].id} />);
     };
 
-    // useEffect(() => {
-    //     console.log(products[0]);
-    // }, [products]);
-
     return (
         <>
             {/* HERO */}
             <div id="hero" className="w-full h-[50vh] md:h-[90vh] flex flex-col justify-center items-start text-white font-brand space-y-4 pl-8">
                 <h2 className="text-3xl md:text-7xl p-2">Shop <br /> Makeup Market</h2>
-                <button className="bg-black border-2 border-hot-pink-50 text-white rounded px-8 py-2 font-regular transition ease font-bold md:px-20 md:py-4 hover:border-white hover:text-hot-pink-50">SHOP</button>
+                <button className="bg-black border-2 border-hot-pink-50 rounded px-8 py-4 font-regular transition ease font-bold md:px-10 md:py-16 hover:border-white hover:text-hot-pink-50">SHOP</button>
             </div>
 
             {/* SECTION ONE: INTRO */}
@@ -44,24 +40,24 @@ export default function Home() {
                 <h3 className="title-style">Shop product types &gt;&gt; </h3>
 
                 <div className="flex flex-wrap justify-center items-center">
-                    <div className="section-two-cards"><span>Lipstick</span></div>
-                    <div className="section-two-cards"><span>Blush</span></div>
-                    <div className="section-two-cards"><span>Mascara</span></div>
-                    <div className="section-two-cards"><span>Foundation</span></div>
-                    <div className="section-two-cards"><span>Nail Polish</span></div>
-                    <div className="section-two-cards"><span>Lip Liner</span></div>
-                    <div className="section-two-cards"><span>Eyeshadow</span></div>
-                    <div className="section-two-cards"><span>Eyeliner</span></div>
-                    <div className="section-two-cards"><span>Eyebrow</span></div>
-                    <div className="section-two-cards"><span>Bronzer</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Blush</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Mascara</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Lipstick</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Foundation</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Nail Polish</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Lip Liner</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Eyeshadow</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Eyeliner</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Eyebrow</span></div>
+                    <div className="sm-product-card-label py-4 md:py-0"><span>Bronzer</span></div>
                 </div>
             </div>
 
             {/* SECTION THREE: FREE SHIPPING OFFER */}
             <section className="bg-black w-full text-white flex justify-evenly items-center pl-12 py-4">
                 <div>
-                    <h3 className="text-2xl mb-2">Free shipping on all orders 10$ and up!</h3>
-                    <p className="text-yellow-400">Just to say thanks for being a pal :)</p>
+                    <h3 className="text-2xl mb-2">Free shipping on all orders 20$ and up!</h3>
+                    <p className="text-yellow-400">Thank you for shopping with Makeup Market.</p>
                 </div>
                 <div>
                     <img src="https://images.unsplash.com/photo-1508777231775-4e31de7591ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80" alt="model" className="h-72 object-cover" />

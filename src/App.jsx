@@ -5,6 +5,7 @@ import Layout from "./components/Layout.jsx";
 import Shop from "./components/Shop";
 import Home from "./components/Home";
 import Saved from "./components/Saved.jsx";
+import Cart from "./components/Cart.jsx";
 
 /*
 
@@ -13,11 +14,9 @@ TODO:
 
 go back and do:
 [] add transition to closing mobile nav
-[] add a secondary header to desktop nav
-[] imporve header
+[] imporve header button
 [] add hover affect to nav icons that will start left to right
-[] add effect after submit for sign up form @ home
-[] add nav to footer
+[] make smaller components (new branch pls)
 
 */
 function App() {
@@ -30,6 +29,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="shop" element={<Shop />} />
             <Route path="saved" element={<Saved />} />
+            <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>
       </UserShoppingContext>

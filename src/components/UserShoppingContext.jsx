@@ -5,9 +5,10 @@ const Context = createContext();
 function UserShoppingContext({ children }) {
     const [savedItems, setSavedItems] = useState([]);
     const [cartedItems, setCartedItems] = useState([]);
+    const [appliedDiscounts, setAppliedDiscounts] = useState([]);
 
     return (
-        <Context.Provider value={{ savedItems, setSavedItems, cartedItems, setCartedItems }}>
+        <Context.Provider value={{ savedItems, setSavedItems, cartedItems, setCartedItems, appliedDiscounts, setAppliedDiscounts }}>
             {children}
         </Context.Provider>
     );

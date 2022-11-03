@@ -51,7 +51,7 @@ export default function Layout() {
                         {/* TODO: ADD AN EFFECT 4 AFTER SUBMIT */}
                         {/* EMAIL SECTION */}
                         <div className="flex justify-center items-end">
-                            <input type="email" name="email" className="h-min mr-2 outline-none border-hot-pink-50 border-b-2 bg-transparent" />
+                            <input type="email" name="email" className="h-min mr-2 outline-none border-hot-pink-50 border-b-2 bg-transparent" placeholder="email" />
                             <button className="border-2 border-hot-pink-50 px-3 rounded hover:bg-hot-pink-50 hover:text-white active:border-black active:bg-hot-pink-100">submit</button>
                         </div>
                     </div>
