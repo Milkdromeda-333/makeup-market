@@ -6,6 +6,11 @@ import Shop from "./components/Shop";
 import Home from "./components/Home";
 import Saved from "./components/Saved.jsx";
 import Cart from "./components/Cart.jsx";
+import Products from "./components/Products.jsx";
+import ShopBrands from "./components/ShopBrands.jsx";
+import ShopCategories from "./components/shopCategories.jsx";
+import ShopByPrice from "./components/ShopByPrice.jsx";
+import ShopByTag from "./components/ShopByTag.jsx";
 
 /*
 
@@ -18,6 +23,10 @@ go back and do:
 [] add hover affect to nav icons that will start left to right
 [] make smaller components (new branch pls)
 
+DOING RN:
+
+- figure out how t oproperly use router and useParams and Link paths ok
+- figureo out why my aray isnt rendering fr some  product cards
 */
 function App() {
 
@@ -26,10 +35,27 @@ function App() {
       <UserShoppingContext>
         <Routes>
           <Route path="/" element={<Layout />}>
+
             <Route index element={<Home />} />
+
             <Route path="shop" element={<Shop />} />
+
+            {/* DOCS: How does one make this work as a nested path? */}
+            <Route path="/shop/brands" element={<ShopBrands />} />
+            <Route path="/shop/shop-by-brand/:brand" element={<Products />} />
+            <Route path="/shop/categories/" element={<ShopCategories />} />
+            <Route path="/shop/categories/:category" element={<Products />} />
+            <Route path="/shop/shop-by-price" element={<ShopByPrice />} />
+            <Route path="/shop/tags/:tag" element={<ShopByTag />} />
+
+            {/* <Route path="/shop" element={<Shop />}>
+              <Route path=":category" element={<Products />} />
+            </Route> */}
+
             <Route path="saved" element={<Saved />} />
+
             <Route path="cart" element={<Cart />} />
+
           </Route>
         </Routes>
       </UserShoppingContext>

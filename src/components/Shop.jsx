@@ -1,6 +1,22 @@
+import { Link } from "react-router-dom";
+import ShopBrands from "./ShopBrands";
+import ShopCategories from "./shopCategories.jsx";
 import Searchbar from "./Searchbar";
 
 export default function Shop() {
+
+    const shopByTagArr = () => {
+        const tags = ["Fair Trade",
+            "Hypoallergenic",
+            "Organic",
+            "Peanut-free",
+            "Vegan",
+            "Silicone-free",
+            "Oil-free",
+            "Chemical-free"];
+
+        return tags.map(tag => <Link to={"/shop/tags/" + tag} className="sm-product-card-label">{tag}</Link>);
+    };
 
     return (
         <div className="m-4">
@@ -14,63 +30,36 @@ export default function Shop() {
             <section className="flex flex-col justify-center items-center gap-4 text-center md:flex-row">
 
                 {/* BY BRAND */}
-                <div className="shop-card mt-4 w-3/4 md:w-1/4">
+                {/* <div className="shop-card mt-4 w-3/4 md:w-1/4">
                     <span>By brand</span>
-                </div>
+                </div> */}
+
+                <Link to="/shop/brands" element={<ShopBrands />} className="shop-card mt-4 w-3/4 md:w-1/4">
+                    By brand
+                </Link>
 
                 {/* BY CATEGORY */}
-                <div className="shop-card mt-4 w-3/4 md:w-1/4">
+                {/* <div className="shop-card mt-4 w-3/4 md:w-1/4">
                     <span>By category</span>
-                </div>
+                </div>; */}
+                <Link to="/shop/categories" element={<ShopCategories />} className="shop-card mt-4 w-3/4 md:w-1/4">
+                    By catagory
+                </Link>
 
                 {/* BY PRICE */}
-                <div className="shop-card mt-4 w-3/4 md:w-1/4">
+                <Link to="/shop/shop-by-price" className="shop-card mt-4 w-3/4 md:w-1/4">
                     <span>By price</span>
-                </div>
-            </section>
+                </Link>
+            </section >
 
             {/* BY TAG */}
-            <div className="flex flex-column justify-center items-center mt-8 border-4 border-black w-3/4 mx-auto rounded p-4">
+            <div div className="flex flex-column justify-center items-center mt-8 border-4 border-black w-3/4 mx-auto rounded p-4" >
                 <h3 className="title-style m-4">By Tag:</h3>
 
                 <div className="flex flex-row flex-wrap justify-center text-center">
-                    <div className="sm-product-card-label">
-                        <span>Fair Trade</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Hypoallergenic</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Organic</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Peanut-free</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Vegan</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Cruelty-free</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Silicone-free</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Oil-free</span>
-                    </div>
-
-                    <div className="sm-product-card-label">
-                        <span>Chemical-free</span>
-                    </div>
+                    {shopByTagArr()}
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };

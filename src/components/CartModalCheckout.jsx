@@ -14,7 +14,7 @@ export default function CartModalCheckout(props) {
                 <h2 className='text-3xl'>Thank you for your purchase. What a great value for <span className="text-green-500">${props.total}</span>!</h2>
                 <p>Heres your recipt:</p>
                 <div>
-                    {cartedItems.map(item => <CartedItemCard {...item} isBeforePurchase={false} />)}
+                    {cartedItems.map(item => <CartedItemCard key={item.id} {...item} isBeforePurchase={false} />)}
                 </div>
                 <Logo fs="25px" />
             </div>

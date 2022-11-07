@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { Context } from "./UserShoppingContext.jsx";
 import CartedItemCard from "./CartedItemCard.jsx";
-import { useEffect } from "react";
 import CartModalCheckout from "./CartModalCheckout.jsx";
 
 // NOTE 2 SELF: NEEDS RESPONSIVENESS

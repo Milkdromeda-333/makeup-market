@@ -1,10 +1,18 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "./ProductsContext";
 import ProductCard from "./ProductCard";
+import Products from "./Products";
+
+/*
+
+im going to work on making the home page 'shop by category' interactive with links that use :useParams. I need to freshen up on how to do this again. I want to make it reusuable for my shop page > by category page. not sure how just yet.
+
+*/
 
 export default function Home() {
 
-    const [products] = useContext(Context);
+    const [[products], shopByCatagoryArr] = useContext(Context);
 
     // chooses three random products to show to the user
     function productSamples() {
@@ -37,19 +45,10 @@ export default function Home() {
 
             {/* SECTION TWO: SHOP LISTS */}
             <div className="flex flex-col justify-center items-center text-center border-t-2 decoration-black" id="card-container">
-                <h3 className="title-style">Shop product types &gt;&gt; </h3>
+                <h3 className="title-style">Shop product category &gt;&gt; </h3>
 
                 <div className="flex flex-wrap justify-center items-center">
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Blush</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Mascara</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Lipstick</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Foundation</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Nail Polish</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Lip Liner</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Eyeshadow</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Eyeliner</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Eyebrow</span></div>
-                    <div className="sm-product-card-label py-4 md:py-0"><span>Bronzer</span></div>
+                    {shopByCatagoryArr().map(category => <Link to={"shop/categories/" + category} className="sm-product-card-label py-4 md:py-0">{category}</Link>)}
                 </div>
             </div>
 
