@@ -6,7 +6,7 @@ export default function CartedItemCard(props) {
     const { setCartedItems } = useContext(Context);
 
     const deleteItem = () => {
-        setCartedItems(prev => prev.filter(item => item.id !== props.id));
+        setCartedItems(prev => prev.filter(item => item !== props.id));
     };
 
     return (

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "./ProductsContext";
 import ProductCard from "./ProductCard";
-import Products from "./Products";
 
 /*
 
@@ -64,7 +63,7 @@ export default function Home() {
             </section>
 
             {/* SECTION FOUR: Product cards */}
-            {/* ERROR DOCS: calls product samples*/}
+            {/* ERROR DOCS: calls product samples twice*/}
             <div className="flex flex-col my-8 justify-center items-center p-4">
                 {products ?
                     <>

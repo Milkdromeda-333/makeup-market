@@ -6,11 +6,12 @@ import Shop from "./components/Shop";
 import Home from "./components/Home";
 import Saved from "./components/Saved.jsx";
 import Cart from "./components/Cart.jsx";
-import Products from "./components/Products.jsx";
 import ShopBrands from "./components/ShopBrands.jsx";
-import ShopCategories from "./components/shopCategories.jsx";
+import ShopCategories from "./components/ShopCategories.jsx";
 import ShopByPrice from "./components/ShopByPrice.jsx";
 import ShopByTag from "./components/ShopByTag.jsx";
+import ShopByBrand from "./components/ShopByBrand.jsx";
+import ShopByCategory from "./components/ShopByCategory.jsx";
 
 /*
 
@@ -41,10 +42,10 @@ function App() {
             <Route path="shop" element={<Shop />} />
 
             {/* DOCS: How does one make this work as a nested path? */}
-            <Route path="/shop/brands" element={<ShopBrands />} />
-            <Route path="/shop/shop-by-brand/:brand" element={<Products />} />
-            <Route path="/shop/categories/" element={<ShopCategories />} />
-            <Route path="/shop/categories/:category" element={<Products />} />
+            <Route path="/shop/shop-by-brand" element={<ShopBrands />} />
+            <Route path="/shop/shop-by-brand/:brand" element={<ShopByBrand />} />
+            <Route path="/shop/shop-by-category" element={<ShopCategories />} />
+            <Route path="/shop/shop-by-category/:category" element={<ShopByCategory />} />
             <Route path="/shop/shop-by-price" element={<ShopByPrice />} />
             <Route path="/shop/tags/:tag" element={<ShopByTag />} />
 

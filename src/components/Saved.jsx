@@ -3,9 +3,9 @@ import { Context } from "./UserShoppingContext";
 import ProductCard from "./ProductCard";
 
 export default function Saved() {
-    const { savedItems, setSavedItems } = useContext(Context);
+    const { savedItems, cartedItems } = useContext(Context);
 
-    const savedItemsCards = savedItems.map(item => <ProductCard key={item.id} {...item} isSaved={true} />);
+    const savedItemsCards = savedItems.map(item => <ProductCard key={item.id} {...item} isSaved={true} isCarted={cartedItems.includes(item.id)} />);
 
     return (
         <div className="m-4">

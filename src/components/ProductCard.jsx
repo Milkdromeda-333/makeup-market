@@ -6,7 +6,7 @@ import { Context } from "./UserShoppingContext";
 
 export default function ProductCard(props) {
 
-    const { product } = useParams();
+    // const { product } = useParams();
 
     const { setSavedItems, setCartedItems } = useContext(Context);
 
@@ -27,15 +27,15 @@ export default function ProductCard(props) {
     // handles cart functionlity. adds and deletes form cart.
     function handleCartItem() {
         if (!isCarted) {
-            setCartedItems(prev => [...prev, { ...props }]);
+            //changed to id from {...props}
+            setCartedItems(prev => [...prev, props.id]);
             setIsCarted(true);
         } else if (isCarted) {
-            setCartedItems(prev => prev.filter(item => item.id !== props.id));
+            // changed from item.id to item
+            setCartedItems(prev => prev.filter(item => item !== props.id));
             setIsCarted(false);
         }
     }
-
-    console.log(product);
 
     return (
         <div className="outline outline-white bg-black flex flex-col justify-center text-center text-white w-1/2 md:w-[400px] relative">

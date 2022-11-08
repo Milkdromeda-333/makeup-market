@@ -27,7 +27,7 @@
     }
 
     .title-style {
-        @apply text-white text-3xl font-bold
+        @apply text-white text-3xl font-bold m-8
     }
 
     .shop-card {

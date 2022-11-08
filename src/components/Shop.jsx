@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import ShopBrands from "./ShopBrands";
-import ShopCategories from "./shopCategories.jsx";
-import Searchbar from "./Searchbar";
+// import ShopBrands from "./ShopBrands";
+// import ShopCategories from "./ShopCategories.jsx";
+// import Searchbar from "./Searchbar";
 
 export default function Shop() {
 
@@ -15,7 +15,7 @@ export default function Shop() {
             "Oil-free",
             "Chemical-free"];
 
-        return tags.map(tag => <Link to={"/shop/tags/" + tag} className="sm-product-card-label">{tag}</Link>);
+        return tags.map(tag => <Link to={"/shop/tags/" + tag} key={tag} className="sm-product-card-label">{tag}</Link>);
     };
 
     return (
@@ -34,7 +34,7 @@ export default function Shop() {
                     <span>By brand</span>
                 </div> */}
 
-                <Link to="/shop/brands" element={<ShopBrands />} className="shop-card mt-4 w-3/4 md:w-1/4">
+                <Link to="/shop/shop-by-brand" className="shop-card mt-4 w-3/4 md:w-1/4">
                     By brand
                 </Link>
 
@@ -42,7 +42,7 @@ export default function Shop() {
                 {/* <div className="shop-card mt-4 w-3/4 md:w-1/4">
                     <span>By category</span>
                 </div>; */}
-                <Link to="/shop/categories" element={<ShopCategories />} className="shop-card mt-4 w-3/4 md:w-1/4">
+                <Link to="/shop/shop-by-category" className="shop-card mt-4 w-3/4 md:w-1/4">
                     By catagory
                 </Link>
 
@@ -53,7 +53,7 @@ export default function Shop() {
             </section >
 
             {/* BY TAG */}
-            <div div className="flex flex-column justify-center items-center mt-8 border-4 border-black w-3/4 mx-auto rounded p-4" >
+            <div className="flex flex-column justify-center items-center mt-8 border-4 border-black w-3/4 mx-auto rounded p-4" >
                 <h3 className="title-style m-4">By Tag:</h3>
 
                 <div className="flex flex-row flex-wrap justify-center text-center">

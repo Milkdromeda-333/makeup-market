@@ -1,7 +1,9 @@
 import { useContext, useState, useEffect } from "react";
-import { Context } from "./UserShoppingContext.jsx";
+import { Context as USContext } from "./UserShoppingContext.jsx";
 import CartedItemCard from "./CartedItemCard.jsx";
 import CartModalCheckout from "./CartModalCheckout.jsx";
+// import ProductCard from "./ProductCard.jsx";
+import { Context } from "./ProductsContext.jsx";
 
 // NOTE 2 SELF: NEEDS RESPONSIVENESS
 
@@ -9,13 +11,18 @@ export default function Cart() {
 
     // STATE, VARIABLES and CONTEXTS
 
-    const { cartedItems, setCartedItems, appliedDiscounts, setAppliedDiscounts } = useContext(Context);
+    const [[products]] = useContext(Context);
+    const { cartedItems, setCartedItems, appliedDiscounts, setAppliedDiscounts } = useContext(USContext);
+
     const [discountCodeInput, setDiscountCodeInput] = useState("");
     const [total, setTotal] = useState(0);
     const [availableDiscounts, setAvailableDiscounts] = useState(["ILOVEMAKEUPMARKET", "10OFF"]);
 
-    const cartedItemsArr = cartedItems.map(item => <CartedItemCard key={item.id} isBeforePurchase={true} {...item} />);
-    const totalArr = cartedItems.map(item => parseInt(item.price, 10)).sort((a, b) => a - b);
+    const cartedItemsArr = cartedItems.map(item => products.find(el => el.id === item));
+
+    const renderCartedItemsArr = cartedItems.map(itemid => <CartedItemCard key={itemid} isBeforePurchase={true} {...cartedItemsArr.find(el => el.id === itemid)} />);
+
+    const totalArr = cartedItemsArr.map(item => +item.price).sort((a, b) => a - b);
     const showAppliedDiscounts = appliedDiscounts.map((el, index) => <li key={index} className="text-green-500">{el}</li>);
 
     //  FUNCTIONS
@@ -99,7 +106,7 @@ export default function Cart() {
                 {/* SECTION 1 */}
                 <section className="flex flex-col flex-wrap p-8 bg-black/90 rounded text-white col-span-2">
 
-                    {cartedItems.length > 0 ? cartedItemsArr : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
+                    {cartedItems.length > 0 ? renderCartedItemsArr : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
 
                     {cartedItems.length > 0 && (
                         <div className="text-center text-xl">
