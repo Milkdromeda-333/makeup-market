@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { Context as USContext } from "./UserShoppingContext.jsx";
 import CartedItemCard from "./CartedItemCard.jsx";
 import CartModalCheckout from "./CartModalCheckout.jsx";
-// import ProductCard from "./ProductCard.jsx";
 import { Context } from "./ProductsContext.jsx";
 
 // NOTE 2 SELF: NEEDS RESPONSIVENESS
@@ -16,30 +15,17 @@ export default function Cart() {
 
     const [discountCodeInput, setDiscountCodeInput] = useState("");
     const [total, setTotal] = useState(0);
-    const [availableDiscounts, setAvailableDiscounts] = useState(["ILOVEMAKEUPMARKET", "10OFF"]);
-    const [isFreeShipping, setIsFreeShipping] = useState(null);
+    const [isDiscountApplied, setIsDiscountApplied] = useState(false);
 
     const cartedItemsArr = cartedItems.map(item => products.find(el => el.id === item));
 
-    const renderCartedItemsArr = cartedItems.map(itemid => <CartedItemCard key={itemid} isBeforePurchase={true} {...cartedItemsArr.find(el => el.id === itemid)} />);
+    const getCartedObj = (id) => cartedItemsArr.find(item => id === item.id);
+
+    const cartedItemsCards = cartedItems.map(itemId => <CartedItemCard key={itemId} isBeforePurchase={true} {...getCartedObj(itemId)} />);
 
     const totalArr = cartedItemsArr.map(item => +(+item.price).toFixed(2)).sort((a, b) => a - b);
 
-    const showAppliedDiscounts = appliedDiscounts.map((el, index) => <li key={index} className="text-green-500">{el}</li>);
-
     //  FUNCTIONS
-
-    const calculateTotal = () => {
-
-        if (total > 20) {
-            setIsFreeShipping(true);
-            return +totalArr.reduce((current, prev) => current + prev, 0).toFixed(2);
-        }
-        if (total < 20) {
-            setIsFreeShipping(false);
-            return +totalArr.reduce((current, prev) => current + prev, 0).toFixed(2) + 5.00;
-        }
-    };
 
     const handleChangeDiscountInput = (e) => {
         setDiscountCodeInput(e.target.value);
@@ -49,35 +35,13 @@ export default function Cart() {
 
         e.preventDefault();
 
-        switch (discountCodeInput) {
-            case "ILOVEMAKEUPMARKET":
-
-                if (availableDiscounts.indexOf("ILOVEMAKEUPMARKET") === -1) {
-                    window.alert("This discount has already been applied!");
-                    break;
-                }
-
-                // gets the lowest priced items index for use in the following functions
-                const discountedItemIndex = cartedItems.findIndex(item => parseInt(item.price) === totalArr[0]);
-
-                setTotal(prev => prev - cartedItems[discountedItemIndex].price);
-                setAppliedDiscounts(prev => [...prev, -cartedItems[discountedItemIndex].price]);
-                setAvailableDiscounts(prev => prev.filter(el => el !== "ILOVEMAKEUPMARKET"));
-
-                break;
-
-            case "10OFF":
-
-                if (availableDiscounts.indexOf("10OFF") === -1) {
-                    window.alert("This discocount has already been applied!");
-                    break;
-                }
-
-                setTotal(prev => prev / (prev / 10));
-                setAppliedDiscounts(prev => [...prev, -total / 10]); setAvailableDiscounts(prev => prev.filter(el => el !== "10OFF"));
-                setAvailableDiscounts(prev => prev.filter(el => el !== "10OFF"));
-
-                break;
+        if (discountCodeInput === "ILOVEMAKEUPMARKET") {
+            if (isDiscountApplied === true) {
+                window.alert("This discount has already been applied!");
+            } else {
+                setTotal(prev => +(prev - (prev / 10)).toFixed(2));
+                setIsDiscountApplied(true);
+            }
         }
         setDiscountCodeInput("");
     };
@@ -85,10 +49,11 @@ export default function Cart() {
     const handlePay = () => {
 
         window.modal.className = "block";
+        // window.modal.style.overflowY = "scroll";
 
         document.querySelector("body").style.overflow = "hidden";
 
-        setAppliedDiscounts([]);
+        setIsDiscountApplied(false);
 
     };
 
@@ -99,14 +64,19 @@ export default function Cart() {
     };
 
     useEffect(() => {
-        setTotal(calculateTotal().toFixed(2));
-    }, [totalArr]);
+
+        if (totalArr.length) {
+            setTotal(+totalArr.reduce((a, b) => a + b).toFixed(2));
+        } else {
+            setTotal(0.00);
+        }
+    }, [cartedItems, appliedDiscounts]);
 
     return (
         <>
             {/* MODAL */}
             <div className="hidden" id="modal">
-                <CartModalCheckout total={total} closeModal={closeModal} onClick={closeModal} />
+                <CartModalCheckout total={total} closeModal={closeModal} cartedItemsArr={cartedItemsArr} onClick={closeModal} />
             </div>
 
             <h2 className="title-style m-4">&gt; &gt; Cart</h2>
@@ -116,12 +86,12 @@ export default function Cart() {
                 {/* SECTION 1 */}
                 <section className="flex flex-col flex-wrap p-8 bg-black/90 rounded text-white col-span-2">
 
-                    {cartedItems.length > 0 ? renderCartedItemsArr : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
+                    {cartedItems.length ? cartedItemsCards : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
 
                     {cartedItems.length > 0 && (
                         <div className="text-xl md:ml-auto">
                             <p className="md:ml-auto underline">Total: </p>
-                            <span className="text-green-500">{(totalArr.reduce((a, b) => a + b)).toFixed(2)}$</span>
+                            <span className="text-green-500">${(totalArr.reduce((a, b) => a + b)).toFixed(2)}</span>
                         </div>
                     )}
 
@@ -129,12 +99,13 @@ export default function Cart() {
 
 
                 {/* SECTION 2 */}
-                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-2 relative min-[1160px]:w-full">
-                    <span>Grand Total: ${total}</span>
-                    <span>Shipping: {isFreeShipping ? "FREE!" : "$5.00"}</span>
-                    <span>Discounts:</span>
-
-                    {appliedDiscounts.length > 0 ? <ul>{showAppliedDiscounts}</ul> : <span>No discounts applied.</span>}
+                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-4 relative min-[1160px]:w-full">
+                    <span>Grand Total: ${total > 0 ? +(total).toFixed(2) + 5.00 : 0.00}</span>
+                    <span>Shipping: $5.00</span>
+                    <div className="flex flex-col flex-wrap">
+                        <span>Discounts:</span>
+                        {isDiscountApplied ? <span className="text-red-400">-${(+(total) / 10).toFixed(2)}</span> : <span>No discounts applied.</span>}
+                    </div>
 
                     {/* DISCOUNT FORM */}
                     <div className="flex flex-col text-center mt-2">

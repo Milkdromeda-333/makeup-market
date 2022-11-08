@@ -36,6 +36,8 @@ Credits:
 
 - loading gif from loading.io
 
+- stylyzed scrollbar made with codepen.io/stephenpaton-tech/full/JjRvGmY
+
 To upgrade later:
 
 - add a full product page after clicking on a product
