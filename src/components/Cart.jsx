@@ -17,19 +17,29 @@ export default function Cart() {
     const [discountCodeInput, setDiscountCodeInput] = useState("");
     const [total, setTotal] = useState(0);
     const [availableDiscounts, setAvailableDiscounts] = useState(["ILOVEMAKEUPMARKET", "10OFF"]);
+    const [isFreeShipping, setIsFreeShipping] = useState(null);
 
     const cartedItemsArr = cartedItems.map(item => products.find(el => el.id === item));
 
     const renderCartedItemsArr = cartedItems.map(itemid => <CartedItemCard key={itemid} isBeforePurchase={true} {...cartedItemsArr.find(el => el.id === itemid)} />);
 
     const totalArr = cartedItemsArr.map(item => +(+item.price).toFixed(2)).sort((a, b) => a - b);
-    const showAppliedDiscounts = appliedDiscounts.map((el, index) => <li key={index} className="text-green-500">{el}</li>);
 
-    console.log(totalArr);
+    const showAppliedDiscounts = appliedDiscounts.map((el, index) => <li key={index} className="text-green-500">{el}</li>);
 
     //  FUNCTIONS
 
-    const calculateTotal = () => +totalArr.reduce((current, prev) => current + prev, 0).toFixed(2);
+    const calculateTotal = () => {
+
+        if (total > 20) {
+            setIsFreeShipping(true);
+            return +totalArr.reduce((current, prev) => current + prev, 0).toFixed(2);
+        }
+        if (total < 20) {
+            setIsFreeShipping(false);
+            return +totalArr.reduce((current, prev) => current + prev, 0).toFixed(2) + 5.00;
+        }
+    };
 
     const handleChangeDiscountInput = (e) => {
         setDiscountCodeInput(e.target.value);
@@ -89,13 +99,11 @@ export default function Cart() {
     };
 
     useEffect(() => {
-        setTotal(calculateTotal);
-    }, [cartedItems]);
+        setTotal(calculateTotal().toFixed(2));
+    }, [totalArr]);
 
     return (
         <>
-
-
             {/* MODAL */}
             <div className="hidden" id="modal">
                 <CartModalCheckout total={total} closeModal={closeModal} onClick={closeModal} />
@@ -113,7 +121,7 @@ export default function Cart() {
                     {cartedItems.length > 0 && (
                         <div className="text-xl md:ml-auto">
                             <p className="md:ml-auto underline">Total: </p>
-                            <span className="text-green-500">{total}$</span>
+                            <span className="text-green-500">{(totalArr.reduce((a, b) => a + b)).toFixed(2)}$</span>
                         </div>
                     )}
 
@@ -121,21 +129,21 @@ export default function Cart() {
 
 
                 {/* SECTION 2 */}
-                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto p-20 gap-2 relative min-[1160px]:w-full">
-                    <span>Bag Total: {total}$</span>
-                    <span>Shipping: {total >= 20 ? "FREE!" : "5$"}</span>
+                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-2 relative min-[1160px]:w-full">
+                    <span>Grand Total: ${total}</span>
+                    <span>Shipping: {isFreeShipping ? "FREE!" : "$5.00"}</span>
                     <span>Discounts:</span>
 
                     {appliedDiscounts.length > 0 ? <ul>{showAppliedDiscounts}</ul> : <span>No discounts applied.</span>}
 
                     {/* DISCOUNT FORM */}
-                    <div className="flex flex-col justify-center items-center mt-2">
+                    <div className="flex flex-col text-center mt-2">
                         <p>Enter discount code:</p>
-                        <input type="text" name="code" value={discountCodeInput} className="bg-transparent outline-none border-b-2" onChange={(e) => handleChangeDiscountInput(e)} />
+                        <input type="text" name="code" value={discountCodeInput} className="bg-transparent outline-none border-b-2 mt-2 p-2" onChange={(e) => handleChangeDiscountInput(e)} />
                         <button onClick={handleSubmitDiscountCode} className="border rounded p-2 mt-2 border-white hover:bg-white hover:text-black transition">submit</button>
                     </div>
 
-                    <button className="bg-green-500 text-white absolute bottom-0 left-0 right-0 h-16 font-bold hover:bg-green-700" onClick={handlePay}>Pay Now</button>
+                    <button className="bg-green-500 text-white absolute bottom-0 left-0 right-0 h-16 font-bold hover:bg-green-600" onClick={handlePay}>Pay Now</button>
                 </section>
 
             </div>
