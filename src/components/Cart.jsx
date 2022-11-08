@@ -22,12 +22,14 @@ export default function Cart() {
 
     const renderCartedItemsArr = cartedItems.map(itemid => <CartedItemCard key={itemid} isBeforePurchase={true} {...cartedItemsArr.find(el => el.id === itemid)} />);
 
-    const totalArr = cartedItemsArr.map(item => +item.price).sort((a, b) => a - b);
+    const totalArr = cartedItemsArr.map(item => +(+item.price).toFixed(2)).sort((a, b) => a - b);
     const showAppliedDiscounts = appliedDiscounts.map((el, index) => <li key={index} className="text-green-500">{el}</li>);
+
+    console.log(totalArr);
 
     //  FUNCTIONS
 
-    const calculateTotal = () => totalArr.reduce((current, prev) => current + prev, 0);
+    const calculateTotal = () => +totalArr.reduce((current, prev) => current + prev, 0).toFixed(2);
 
     const handleChangeDiscountInput = (e) => {
         setDiscountCodeInput(e.target.value);
@@ -109,7 +111,7 @@ export default function Cart() {
                     {cartedItems.length > 0 ? renderCartedItemsArr : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
 
                     {cartedItems.length > 0 && (
-                        <div className="text-center text-xl">
+                        <div className="text-xl md:ml-auto">
                             <p className="md:ml-auto underline">Total: </p>
                             <span className="text-green-500">{total}$</span>
                         </div>
