@@ -9,7 +9,7 @@ export default function MobileNav({ navToggleFunc, isNavOpen }) {
         <>
             <div className="grid place-items-center w-full bg-black p-4 border-b-[1px] relative">
 
-                <Logo fs="20px" className="" />
+                <Logo fs="18px" className="px-8" />
 
                 <img src="https://img.icons8.com/material-outlined/24/FFFFFF/menu--v1.png" alt="nav toggler" className="w-10 p-2 absolute right-3 top-0" onClick={navToggleFunc} />
 

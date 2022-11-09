@@ -51,11 +51,11 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* SECTION THREE: FREE SHIPPING OFFER */}
+            {/* SECTION THREE: OFFER */}
             <section className="bg-black w-full text-white flex justify-evenly items-center pl-12 py-4">
                 <div>
-                    <h3 className="text-2xl mb-2">Free shipping on all orders 20$ and up!</h3>
-                    <p className="text-yellow-400">Thank you for shopping with Makeup Market.</p>
+                    <h3 className="text-2xl mb-2">10% OFF YOUR PURCHASE WHEN YOU USE CODE:</h3>
+                    <p className="text-yellow-400 text-center">ILOVEMAKEUPMARKET</p>
                 </div>
                 <div>
                     <img src="https://images.unsplash.com/photo-1508777231775-4e31de7591ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80" alt="model" className="h-72 object-cover" />

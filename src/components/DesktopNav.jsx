@@ -11,7 +11,7 @@ export default function DesktopNav() {
         <>
             <section className="flex flex-row items-center justify-center bg-black border-b-2 w-full p-4">
 
-                <div className="flex flex-row justify-evenly items-center gap-8">
+                <div className="flex flex-row justify-evenly items-center gap-8 pr-8">
                     <Link to="/" className="">
                         <img src="https://img.icons8.com/laces/64/facc15/home.png" alt="home" className="w-10" />
                     </Link>
@@ -22,7 +22,7 @@ export default function DesktopNav() {
 
                 <Logo fs="30px" />
 
-                <div className="flex flex-row justify-evenly items-center pr-5 gap-8">
+                <div className="flex flex-row justify-evenly items-center pl-8 gap-8">
                     <Link to="/shop">
                         <img src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/FFFFFF/external-makeup-morning-routine-outline-outline-andi-nur-abdillah.png" alt="shop page" className="w-10" />
                     </Link>

@@ -80,10 +80,10 @@ export default function Cart() {
 
             <h2 className="title-style m-4">&gt; &gt; Cart</h2>
 
-            <div className="grid grid-cols-1 min-[1160px]:grid-cols-3 m-8 gap-4 text-white justify-center">
+            <div className="grid grid-cols-1 min-[1065px]:grid-cols-3 m-8 gap-4 text-white justify-center justify-items-center md:justify-items-stretch">
 
                 {/* SECTION 1 */}
-                <section className="flex flex-col flex-wrap p-8 bg-black/90 rounded text-white col-span-2">
+                <section className="flex flex-col flex-wrap p-8 bg-black/90 rounded text-white md:col-span-2 w-full">
 
                     {cartedItems.length ? cartedItemsCards : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
 
@@ -96,9 +96,8 @@ export default function Cart() {
 
                 </section>
 
-
                 {/* SECTION 2 */}
-                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-4 relative min-[1160px]:w-full">
+                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-4 relative w-3/4 min-[1065px]:w-full">
                     <span>Grand Total: ${total > 0 ? (+total + 5.00).toFixed(2) : 0.00}</span>
                     <span>Shipping: $5.00</span>
                     <div className="flex flex-col flex-wrap">
