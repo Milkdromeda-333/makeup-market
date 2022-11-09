@@ -18,6 +18,7 @@ import ShopByCategory from "./components/ShopByCategory.jsx";
 - add a back button
 - add a scroll to top button
 - fix home category btns
+- fix mobile nav nav
 */
 function App() {
 
