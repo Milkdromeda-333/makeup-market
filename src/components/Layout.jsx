@@ -58,7 +58,7 @@ export default function Layout() {
 
                     {/* CONTACT */}
                     <div id="contact-info" className="mt-6 w-full h-full flex flex-col justify-center items-center">
-                        <h3 className="text-4xl">Get in touch:</h3>
+                        <h3 className="text-4xl text-center">Get in touch:</h3>
                         <div className="flex">
                             <a href="tel:2223351458">
                                 <img src="https://img.icons8.com/ios/50/f542a1/apple-phone.png" alt="phone" />

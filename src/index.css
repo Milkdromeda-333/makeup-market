@@ -23,7 +23,7 @@
     }
 
     .sm-product-card-label {
-        @apply bg-black m-4 w-52 py-4 text-white rounded shadow-[0_0_0_] relative
+        @apply bg-black m-4 w-[208px] py-4 text-white rounded shadow-[0_0_0_] relative
     }
 
     .title-style {
@@ -103,7 +103,7 @@ footer li {
 
 @media screen and (max-width:500px) {
     .sm-product-card-label {
-        width: 60%;
+        width: 200px;
         margin-block: .5rem;
         padding: .5rem;
     }
@@ -128,4 +128,9 @@ footer li {
 *::-webkit-scrollbar-thumb {
     background-color: black;
     border: 2px solid white;
+}
+
+.searchbar{
+    background: white url(https://img.icons8.com/ios/30/000/search--v1.png) no-repeat;
+    background-position: .5rem ;
 }
