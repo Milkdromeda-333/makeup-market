@@ -15,18 +15,9 @@ import ShopByCategory from "./components/ShopByCategory.jsx";
 
 /*
 
-TODO:
-[] set up searchbar
-
-go back and do:
-[] add transition to closing mobile nav
-[] imporve header button
-[] add hover affect to nav icons that will start left to right
-[] make smaller components (new branch pls)
-
-DOING RN:
-
-- fix responsiveness for cart.jsx
+- add a back button
+- add a scroll to top button
+- fix home category btns
 */
 function App() {
 

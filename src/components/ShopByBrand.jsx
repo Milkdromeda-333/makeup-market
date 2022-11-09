@@ -17,8 +17,6 @@ export default function ShopByBrand() {
             .catch(err => console.log(err));
     }, []);
 
-    console.log(brand.split(""));
-
     return (
         <>
             <h2 className="title-style">&gt; &gt; Shop {brand}</h2>

@@ -39,7 +39,7 @@ export default function ProductCard(props) {
     }
 
     return (
-        <div className="outline outline-white bg-black flex flex-col justify-center text-center text-white w-1/2 md:w-[400px] relative">
+        <div className="outline outline-white bg-black flex flex-col w-3/4 md:w-[200px] justify-center text-center text-white relative">
 
             {/* toggles the appearance of the saved icon */}
             {isSaved ? <span class="bi bi-suit-heart-fill absolute top-0 right-2 text-2xl bg-white px-2  text-red-600 hover:text-red-700" onClick={handleSaveClick}></span> : <span className="bi bi-suit-heart text-slate-900 absolute top-0 right-2 text-2xl bg-white px-2 h-min hover:text-red-400" onClick={handleSaveClick}></span>}

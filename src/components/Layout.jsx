@@ -38,7 +38,7 @@ export default function Layout() {
                 <div id="sign-up-form" className="flex flex-col justify-center items-center p-8 min-[1119px]:flex-row md:justify-center">
 
                     {/* SIGN UP */}
-                    <div className="flex flex-col justify-center items-center w-full md:flex-row md:justify-center  lg:border-r-2">
+                    <div className="flex flex-col justify-center items-center w-full lg:flex-row md:justify-center  lg:border-r-2">
                         <div className="mb-8 md:mb-0">
                             <h3 className="text-4xl pb-4 underline decoration-hot-pink-50">Sign up for:</h3>
                             <ul className="list-disc list-inside text-xl relative left-4">

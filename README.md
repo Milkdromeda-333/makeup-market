@@ -26,6 +26,8 @@ I learned:
 
 - To extract numbers from a string using "+" ex. (+"10") === 10
 
+- That one must commit more often.. just in case
+
 Credits:
 
 - Images from unsplash.com

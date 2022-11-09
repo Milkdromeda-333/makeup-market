@@ -3,17 +3,10 @@ import { Link } from "react-router-dom";
 import { Context } from "./ProductsContext";
 import ProductCard from "./ProductCard";
 
-/*
-
-im going to work on making the home page 'shop by category' interactive with links that use :useParams. I need to freshen up on how to do this again. I want to make it reusuable for my shop page > by category page. not sure how just yet.
-
-*/
-
 export default function Home() {
 
     const [[products], shopByCatagoryArr] = useContext(Context);
 
-    // chooses three random products to show to the user
     function productSamples() {
 
         const indices = [];
@@ -32,12 +25,12 @@ export default function Home() {
             </div>
 
             {/* SECTION ONE: INTRO */}
-            <section className="flex flex-col-reverse justify-center w-full md:border-t-2 decoration-black min-[1371px]:flex-row">
+            <section className="flex flex-col-reverse justify-center w-full md:border-t-2 decoration-black min-[1219px]:flex-row">
 
-                <img src="https://images.unsplash.com/photo-1633329712165-4e578376eb87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="models" className="object-cover mx-auto w-full h-[500px] border-r-2 decoration-black" />
-                <div className="m-4">
-                    <h2 className="bg-black text-white text-xl text-center md:text-7xl">Express yourself.</h2>
-                    <p className="text-2xl mx-auto p-5 text-white lg:p-[80px]">Makeup Market is dedicated to your happiness in the way you express yourself. With makeup options that span from crulty-free and vegan to oil free and water free. Don't be afraid to be you with our high quality and affordablly priced products.</p>
+                <img src="https://images.unsplash.com/photo-1633329712165-4e578376eb87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="models" className="object-cover mx-auto w-full md:h-[500px] border-r-2 decoration-black" />
+                <div className="flex flex-col">
+                    <h2 className=" bg-black text-white text-center text-2xl py-4 md:py-0 md:text-5xl md:w-full">Express yourself.</h2>
+                    <p className="md:text-2xl my-8 mx-4 md:mx-auto md:mt-8 pb-4 md:py-0 text-white md:text-center">Makeup Market is dedicated to your happiness in the way you express yourself. With makeup options that span from crulty-free and vegan to oil free and water free. Don't be afraid to be you with our high quality and affordablly priced products.</p>
                 </div>
 
             </section>
@@ -47,7 +40,7 @@ export default function Home() {
                 <h3 className="title-style">Shop product category &gt;&gt; </h3>
 
                 <div className="flex flex-wrap justify-center items-center">
-                    {shopByCatagoryArr().map(category => <Link to={"shop/categories/" + category} className="sm-product-card-label py-4 md:py-0">{category}</Link>)}
+                    {shopByCatagoryArr().map(category => <Link to={"shop/shop-by-category/" + category} className="sm-product-card-label py-4 md:py-0">{category}</Link>)}
                 </div>
             </div>
 
@@ -68,7 +61,7 @@ export default function Home() {
                 {products ?
                     <>
                         <h2 className="title-style mb-4" id="samples-title">Sneak Peek &gt;&gt;</h2>
-                        <div className="flex flex-row flex-wrap gap-8 md:flex-row justify-center items-center">
+                        <div className="flex flex-row flex-wrap gap-8 justify-center items-center w-full">
                             {productSamples()}
 
                         </div>
