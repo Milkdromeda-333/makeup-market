@@ -5,9 +5,9 @@ import MobileNav from "./MobileNav.jsx";
 
 export default function Layout() {
 
+
     // NAV FUNCTIONALITY
-    const [isNavOpen, setIsNavOpen] = useState(false);
-    const navToggleFunc = () => setIsNavOpen(prev => !prev);
+
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1236);
 
     // NOTE: @ 976 px my nav layout breaks bc of the searchbar
@@ -26,7 +26,7 @@ export default function Layout() {
 
             {/* NAV */}
             <nav className="text-white w-full">
-                {!isDesktop ? <MobileNav navToggleFunc={navToggleFunc} isNavOpen={isNavOpen} /> : <DesktopNav />}
+                {!isDesktop ? <MobileNav /> : <DesktopNav />}
             </nav>
 
             {/* OUTLET */}

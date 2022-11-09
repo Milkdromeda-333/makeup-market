@@ -1,9 +1,22 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 import Searchbar from "./Searchbar.jsx";
 import 'animate.css';
+import { useState } from 'react';
 
-export default function MobileNav({ navToggleFunc, isNavOpen }) {
+export default function MobileNav() {
+
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+
+    const navToggleFunc = () => setIsNavOpen(prev => !prev);
+
+    const navigate = useNavigate();
+
+    const navigateAway = (toggleTo) => {
+        navToggleFunc();
+        navigate(toggleTo);
+    };
 
     return (
         <>
@@ -13,16 +26,14 @@ export default function MobileNav({ navToggleFunc, isNavOpen }) {
 
                 <img src="https://img.icons8.com/material-outlined/24/FFFFFF/menu--v1.png" alt="nav toggler" className="w-10 p-2 absolute right-3 top-0" onClick={navToggleFunc} />
 
-
-
             </div>
 
-            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm absolute z-50 w-full animate__animated animate__fadeInDown animate__faster`} aria-hidden="true" aria-label="Nav">
+            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm absolute z-50 w-full animate__animated animate__fadeInDown  animate__faster`} aria-label="Nav">
                 <Searchbar />
-                <Link to="/" className="nav-items">Home</Link>
-                <Link to="/saved" className="nav-items">Saved Items</Link>
-                <Link to="/shop" className="nav-items">SHOP</Link>
-                <Link to="/cart" className="nav-items">Cart</Link>
+                <a onClick={() => navigateAway("/")} className="nav-items">Home</a>
+                <a onClick={() => navigateAway("/saved")} className="nav-items">Saved Items</a>
+                <a onClick={() => navigateAway("/shop")} className="nav-items">SHOP</a>
+                <a onClick={() => navigateAway("/cart")} className="nav-items">Cart</a>
             </div>
         </>
     );
