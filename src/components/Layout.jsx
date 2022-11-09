@@ -38,7 +38,8 @@ export default function Layout() {
                 <div id="sign-up-form" className="flex flex-col justify-center items-center p-8 min-[1119px]:flex-row md:justify-center">
 
                     {/* SIGN UP */}
-                    <div className="flex flex-col justify-center items-center w-full lg:flex-row md:justify-center  lg:border-r-2">
+                    <div className="flex flex-col justify-center items-center w-full lg:flex-row md:justify-center  min-[1131px]:border-r-2">
+
                         <div className="mb-8 md:mb-0">
                             <h3 className="text-4xl pb-4 underline decoration-hot-pink-50">Sign up for:</h3>
                             <ul className="list-disc list-inside text-xl relative left-4">
@@ -49,7 +50,7 @@ export default function Layout() {
                         </div>
 
                         {/* EMAIL SECTION */}
-                        <div className="flex justify-center items-end w-full flex-wrap">
+                        <div className="flex justify-center items-end flex-wrap">
                             <input type="email" name="email" className="h-min w-3/4 mr-2 outline-none border-hot-pink-50 border-b-2 bg-transparent md:w-auto" placeholder="email" />
                             <button className="border-2 border-hot-pink-50 px-3 rounded mt-2 w-3/4 md:w-auto hover:bg-hot-pink-50 hover:text-white active:border-black active:bg-hot-pink-100">submit</button>
                         </div>
@@ -57,7 +58,7 @@ export default function Layout() {
 
                     {/* CONTACT */}
                     <div id="contact-info" className="mt-6 w-full h-full flex flex-col justify-center items-center">
-                        <span>Get in touch:</span>
+                        <h3 className="text-4xl">Get in touch:</h3>
                         <div className="flex">
                             <a href="tel:2223351458">
                                 <img src="https://img.icons8.com/ios/50/f542a1/apple-phone.png" alt="phone" />
