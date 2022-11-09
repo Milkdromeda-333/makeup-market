@@ -26,8 +26,9 @@ go back and do:
 
 DOING RN:
 
-- figure out how t oproperly use router and useParams and Link paths ok
-- figureo out why my aray isnt rendering fr some  product cards
+- fix responsiveness for cart.jsx
+- fix shop by category in home.jsx
+-a display discount in home instead of free discount OR fix shipping discount and dispaly other discount underneath header
 */
 function App() {
 

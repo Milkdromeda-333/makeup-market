@@ -28,7 +28,7 @@ export default function Home() {
             {/* HERO */}
             <div id="hero" className="w-full h-[50vh] md:h-[90vh] flex flex-col justify-center items-start text-white font-brand space-y-4 pl-8">
                 <h2 className="text-3xl md:text-7xl p-2">Shop <br /> Makeup Market</h2>
-                <button className="bg-black border-2 border-hot-pink-50 rounded px-8 py-4 font-regular transition ease font-bold md:px-10 md:py-16 hover:border-white hover:text-hot-pink-50">SHOP</button>
+                <Link to="/shop" className="bg-black border-2 border-hot-pink-50 rounded px-8 py-4 font-regular transition ease font-bold md:px-10 md:py-16 hover:border-white hover:text-hot-pink-50">SHOP</Link>
             </div>
 
             {/* SECTION ONE: INTRO */}

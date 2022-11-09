@@ -49,7 +49,6 @@ export default function Cart() {
     const handlePay = () => {
 
         window.modal.className = "block";
-        // window.modal.style.overflowY = "scroll";
 
         document.querySelector("body").style.overflow = "hidden";
 
@@ -100,7 +99,7 @@ export default function Cart() {
 
                 {/* SECTION 2 */}
                 <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-4 relative min-[1160px]:w-full">
-                    <span>Grand Total: ${total > 0 ? +(total).toFixed(2) + 5.00 : 0.00}</span>
+                    <span>Grand Total: ${total > 0 ? (+total + 5.00).toFixed(2) : 0.00}</span>
                     <span>Shipping: $5.00</span>
                     <div className="flex flex-col flex-wrap">
                         <span>Discounts:</span>
