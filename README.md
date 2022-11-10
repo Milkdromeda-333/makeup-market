@@ -52,6 +52,10 @@ To upgrade later:
 
 - add icons to shop by category cards
 
+- searchbar include links to an individual products page
+
+- make navbar searchbar functional
+
 Notes:
 
 - For some reason i needed to add `mode: jit' to my tailwind config to make my arbitrary value for a media query work. Not too sure what it does but I'm thankful that it worked 🤷‍♀️

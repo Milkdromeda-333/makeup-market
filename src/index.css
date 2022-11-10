@@ -134,3 +134,7 @@ footer li {
     background: white url(https://img.icons8.com/ios/30/000/search--v1.png) no-repeat;
     background-position: .5rem ;
 }
+
+#resultsWrapper{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}

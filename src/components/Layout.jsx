@@ -22,7 +22,7 @@ export default function Layout() {
 
     return (
 
-        <div className="flex flex-col h-full relative min-h-[100vh]">
+        <div className="flex flex-col h-full min-h-[100vh]">
 
             {/* NAV */}
             <nav className="text-white w-full">
