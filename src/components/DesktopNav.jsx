@@ -13,10 +13,10 @@ export default function DesktopNav() {
 
                 <div className="flex flex-row justify-evenly items-center gap-8 pr-8">
                     <Link to="/" className="">
-                        <img src="https://img.icons8.com/laces/64/facc15/home.png" alt="home" className="w-10" />
+                        <i className="bi bi-house-door text-yellow-400 text-4xl hover:text-yellow-500" />
                     </Link>
                     <Link to="/saved" className="">
-                        <i className="bi bi-bookmark-heart text-white text-[1.8rem]"></i>
+                        <i className="bi bi-bookmark-heart text-white text-[1.8rem]" />
                     </Link>
                 </div>
 
@@ -24,10 +24,11 @@ export default function DesktopNav() {
 
                 <div className="flex flex-row justify-evenly items-center pl-8 gap-8">
                     <Link to="/shop">
-                        <img src="https://img.icons8.com/external-outline-andi-nur-abdillah/64/FFFFFF/external-makeup-morning-routine-outline-outline-andi-nur-abdillah.png" alt="shop page" className="w-10" />
+                        <img src="https://img.icons8.com/pastel-glyph/64/FFFFFF/makeup--v2.png" alt="shop page" className="w-10" />
                     </Link>
-                    <Link to="/cart" className="relative">
-                        <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/50/FFFFFF/external-Cart-shopping-those-icons-lineal-those-icons-2.png" alt="cart" className="w-10" />
+                    <Link to="/cart" className="relative hover:text-white">
+
+                        <i className="bi bi-basket3 text-4xl" />
                         <span className='absolute -right-2 -bottom-[5px] text-hot-pink-50 font-bold hover:text-hot-pink-50'>
                             {cartedItems.length}
                         </span>

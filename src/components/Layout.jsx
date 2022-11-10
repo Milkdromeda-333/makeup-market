@@ -58,27 +58,28 @@ export default function Layout() {
 
                     {/* CONTACT */}
                     <div id="contact-info" className="mt-6 w-full h-full flex flex-col justify-center items-center">
-                        <h3 className="text-4xl text-center">Get in touch:</h3>
-                        <div className="flex">
+                        <h3 className="text-4xl text-center underline decoration-hot-pink-50 pb-2">Get in touch:</h3>
+
+                        <div className="flex gap-2 text-white">
                             <a href="tel:2223351458">
-                                <img src="https://img.icons8.com/ios/50/f542a1/apple-phone.png" alt="phone" />
+                                <i class="bi bi-headset text-3xl hover:text-yellow-400" />
                             </a>
                             <a href="#">
-                                <img src="https://img.icons8.com/ios/50/f542a1/imessage.png" alt="chat" />
+                                <i class="bi bi-chat-left-dots text-3xl hover:text-hot-pink-50" />
                             </a>
                             <a href="#">
-                                <img src="https://img.icons8.com/ios/50/f542a1/circled-envelope.png" alt="email" />
+                                <i class="bi bi-envelope text-3xl hover:text-yellow-400" />
                             </a>
                         </div>
-                        <div className="flex">
+                        <div className="flex gap-2">
                             <a href="#">
-                                <img src="https://img.icons8.com/ios/50/f542a1/facebook--v1.png" alt="facebook" />
+                                <i class="bi bi-facebook text-3xl hover:text-yellow-400" />
                             </a>
                             <a href="#">
-                                <img src="https://img.icons8.com/ios/50/f542a1/twitter-squared.png" alt="twitter" />
+                                <i class="bi bi-twitter text-3xl hover:text-hot-pink-50" />
                             </a>
                             <a href="#">
-                                <img src="https://img.icons8.com/small/50/f542a1/instagram-new.png" alt="instagram" />
+                                <i class="bi bi-instagram text-3xl hover:text-yellow-400" />
                             </a>
                         </div>
                     </div>
