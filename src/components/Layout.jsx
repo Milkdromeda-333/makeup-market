@@ -43,9 +43,9 @@ export default function Layout() {
                         <div className="mb-8 md:mb-0">
                             <h3 className="text-4xl pb-4 underline decoration-hot-pink-50">Sign up for:</h3>
                             <ul className="list-disc list-inside text-xl relative left-4">
-                                <li>promotions</li>
-                                <li>sales</li>
-                                <li>offers</li>
+                                <li>Promotions</li>
+                                <li>Sales</li>
+                                <li>Offers</li>
                             </ul>
                         </div>
 
@@ -62,24 +62,24 @@ export default function Layout() {
 
                         <div className="flex gap-2 text-white">
                             <a href="tel:2223351458">
-                                <i class="bi bi-headset text-3xl hover:text-yellow-400" />
+                                <i class="bi bi-headset text-2xl hover:text-yellow-400" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-chat-left-dots text-3xl hover:text-hot-pink-50" />
+                                <i class="bi bi-chat-left-dots text-2xl hover:text-hot-pink-50" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-envelope text-3xl hover:text-yellow-400" />
+                                <i class="bi bi-envelope text-2xl hover:text-yellow-400" />
                             </a>
                         </div>
                         <div className="flex gap-2">
                             <a href="#">
-                                <i class="bi bi-facebook text-3xl hover:text-[#4267B2]" />
+                                <i class="bi bi-facebook text-2xl hover:text-[#4267B2]" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-twitter text-3xl hover:text-[#1DA1F2]" />
+                                <i class="bi bi-twitter text-2xl hover:text-[#1DA1F2]" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-instagram text-3xl hover:text-[#C13584]" />
+                                <i class="bi bi-instagram text-2xl hover:text-[#C13584]" />
                             </a>
                         </div>
                     </div>

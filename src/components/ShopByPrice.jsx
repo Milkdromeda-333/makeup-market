@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import ProductCard from "./ProductCard";
 import { Context } from "./ProductsContext";
+import CalculateResults from "./CalculateResults";
 
 
 export default function ShopByPrice() {
@@ -13,7 +14,8 @@ export default function ShopByPrice() {
 
     return (
         <>
-            <h2 className="title-style m-4">&gt; &gt; Shop by Price</h2>
+            <h2 className="title-style">&gt; &gt; Shop by Price</h2>
+            <CalculateResults numResults={orderedProductsArr().length} />
 
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-4">
                 {products ? orderedProductsArr() : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}

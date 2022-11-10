@@ -16,11 +16,14 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - organize shopbyprice
 
-- add icons to shop by category cards
+- make navbar searchbar fully functional
 
-- searchbar include links to an individual products page
+- add a back button
 
-- make navbar searchbar functional
+- add a scroll to top button
+
+- fix mobile nav nav animation
+
 
 # COMPONENTS:
 

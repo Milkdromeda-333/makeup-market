@@ -13,12 +13,6 @@ import ShopByTag from "./components/ShopByTag.jsx";
 import ShopByBrand from "./components/ShopByBrand.jsx";
 import ShopByCategory from "./components/ShopByCategory.jsx";
 
-/*
-
-- add a back button
-- add a scroll to top button
-- fix mobile nav nav animation
-*/
 function App() {
 
   return (

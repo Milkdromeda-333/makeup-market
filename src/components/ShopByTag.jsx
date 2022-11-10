@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "./ProductCard";
+import CalculateResults from "./CalculateResults";
 
 export default function ShopByTag() {
 
@@ -20,7 +21,8 @@ export default function ShopByTag() {
 
     return (
         <>
-            <h2 className="title-style m-4">&gt; &gt; Shop {tag} Products</h2>
+            <h2 className="title-style">&gt; &gt; Shop {tag} Products</h2>
+            <CalculateResults numResults={productsArr.length} />
 
             <div className="flex flex-wrap flex-row justify-center items-center gap-8 m-4">
                 {products.length > 0 ? productsArr || "Sorry, no products to show..." : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
