@@ -22,7 +22,7 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - make navbar searchbar functional
 
-## COMPONENTS:
+# COMPONENTS:
 
 ## Cart.jsx functionalty:
 
@@ -37,12 +37,14 @@ When a user enters the predetermined discount code that is stored in the callbac
 - submit pay and modal
 Finally, when the user clicks submit it calls handlepay() and it sets up the modal and disables scroll on the document body. And, resets isDiscountApplied so that the ui can use it again after the user has "paid" and the part that shows the users applied discounts can re-set.
 
+
 ## Shop.jsx functionality
 
 This component renders cards that navigate to shopping pages and a searchbar that at the moment only renders cards (Result.jsx) of objects whose .name matches with the user input. And, when there are results from the search and there is input in the searchbar, it renders the cards underneath the search bar.
 
 - searchbar useEffect
 There is a useEffect hook that onMount will add an evet listener listening for clicks and if the searchbar is active, it resets userInput and that consequentially removes the div rendering the cards. 
+
 
 ### ProductCard.jsx functionality:
 
