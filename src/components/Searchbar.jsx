@@ -7,7 +7,7 @@ export default function Searchbar() {
                 <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
             </svg>
 
-            <input type="search" className="round-lg bg-transparent border-b-2 pl-[1.8rem]  pr-3 focus:outline-none focus:border-b-2" />
+            <input type="search" className="round-lg bg-transparent border-b-2 pl-[1.8rem]  pr-3 focus:outline-none focus:border-b-2" placeholder="Search" />
         </div>
     );
 }

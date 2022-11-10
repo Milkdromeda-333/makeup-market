@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import CalculateResults from "../../CalculateResults";
+import CalculateResults from "./CalculateResults";
 
 
 export default function ShopByCatagory() {

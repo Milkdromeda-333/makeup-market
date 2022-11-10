@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CalculateResults from "../../CalculateResults";
+import CalculateResults from "./CalculateResults";
 import ProductCard from "./ProductCard";
 
 
