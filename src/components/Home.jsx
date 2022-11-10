@@ -57,7 +57,7 @@ export default function Home() {
 
             {/* SECTION FOUR: Product cards */}
             {/* BUG: calls product samples twice*/}
-            <div className="flex flex-col my-8 justify-center items-center p-4">
+            <div className="flex flex-col justify-center items-center pb-4">
                 {products ?
                     <>
                         <h2 className="title-style mb-4" id="samples-title">Sneak Peek &gt;&gt;</h2>

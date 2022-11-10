@@ -15,7 +15,7 @@ export default function ShopByPrice() {
         <>
             <h2 className="title-style m-4">&gt; &gt; Shop by Price</h2>
 
-            <div className="flex flex-row flex-wrap justify-center items-center gap-8 mt-4">
+            <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-4">
                 {products ? orderedProductsArr() : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
             </div>
 

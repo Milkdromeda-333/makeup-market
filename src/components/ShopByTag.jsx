@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 
-// rendered by Shop.jsx
 export default function ShopByTag() {
 
     const { tag } = useParams();
@@ -19,16 +18,11 @@ export default function ShopByTag() {
 
     }, []);
 
-    useEffect(() => {
-        console.log(products);
-
-    }, [products]);
-
     return (
         <>
             <h2 className="title-style m-4">&gt; &gt; Shop {tag} Products</h2>
 
-            <div className="flex flex-wrap flex-row justify-center items-center gap-8 my-8">
+            <div className="flex flex-wrap flex-row justify-center items-center gap-8 m-4">
                 {products.length > 0 ? productsArr || "Sorry, no products to show..." : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
             </div>
         </>

@@ -17,8 +17,7 @@ import ShopByCategory from "./components/ShopByCategory.jsx";
 
 - add a back button
 - add a scroll to top button
-- fix home category btns
-- fix mobile nav nav
+- fix mobile nav nav animation
 */
 function App() {
 
@@ -32,17 +31,12 @@ function App() {
 
             <Route path="shop" element={<Shop />} />
 
-            {/* DOCS: How does one make this work as a nested path? */}
             <Route path="/shop/shop-by-brand" element={<ShopBrands />} />
             <Route path="/shop/shop-by-brand/:brand" element={<ShopByBrand />} />
             <Route path="/shop/shop-by-category" element={<ShopCategories />} />
             <Route path="/shop/shop-by-category/:category" element={<ShopByCategory />} />
             <Route path="/shop/shop-by-price" element={<ShopByPrice />} />
             <Route path="/shop/tags/:tag" element={<ShopByTag />} />
-
-            {/* <Route path="/shop" element={<Shop />}>
-              <Route path=":category" element={<Products />} />
-            </Route> */}
 
             <Route path="saved" element={<Saved />} />
 

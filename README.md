@@ -40,21 +40,6 @@ Credits:
 
 - stylyzed scrollbar made with codepen.io/stephenpaton-tech/full/JjRvGmY
 
-To upgrade later:
-
-- add a full product page after clicking on a product
-
-- add a way to show a certain amount of cards and have a button to render more to the screen
-
-- filter shop by brands page
-
-- organize shopbyprice
-
-- add icons to shop by category cards
-
-- searchbar include links to an individual products page
-
-- make navbar searchbar functional
 
 Notes:
 

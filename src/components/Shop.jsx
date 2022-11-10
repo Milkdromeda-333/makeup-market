@@ -10,7 +10,6 @@ export default function Shop() {
     const [[products]] = useContext(Context);
     const [resultsCards, setResultsCards] = useState(null);
 
-
     const handleInputChange = (e) => {
         setUserInput(e.target.value);
     };
@@ -63,18 +62,22 @@ export default function Shop() {
             {/* Cards */}
             <div className="relative z[1]">
                 <section className="flex flex-col justify-center items-center gap-4 text-center md:flex-row">
+
                     {/* BY BRAND */}
                     <Link to="/shop/shop-by-brand" className="shop-card mt-4 w-3/4 md:w-1/4">
                         By brand
                     </Link>
+
                     {/* BY CATEGORY */}
                     <Link to="/shop/shop-by-category" className="shop-card mt-4 w-3/4 md:w-1/4">
                         By catagory
                     </Link>
+
                     {/* BY PRICE */}
                     <Link to="/shop/shop-by-price" className="shop-card mt-4 w-3/4 md:w-1/4">
                         <span>By price</span>
                     </Link>
+
                 </section >
 
                 {/* BY TAG */}
