@@ -40,6 +40,11 @@ export default function Cart() {
                 setTotal(prev => +(prev - (prev / 10)).toFixed(2));
                 setIsDiscountApplied(true);
             }
+        } else if (isDiscountApplied && isDiscountApplied) {
+            window.alert("You have already used a code!");
+        }
+        else {
+            window.alert("Sorry, there's no such code.\n **Hint: Home pages always have goodies!** 😉");
         }
         setDiscountCodeInput("");
     };
