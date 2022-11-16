@@ -11,13 +11,6 @@ export default function MobileNav() {
 
     const navToggleFunc = () => setIsNavOpen(prev => !prev);
 
-    // TRYING TO ANIMATE EXIT
-    // const navToggleFunc = () => {
-    //     document.querySelector("#navDropDown").classList.replace("animate__fadeInDown", "animate__fadeOutUp");
-    //     setIsNavOpen(prev => !prev);
-    //     console.log(document.querySelector("#navDropDown").classList);
-    // };
-
     const navigate = useNavigate();
 
     const navigateAway = (toggleTo) => {
@@ -35,11 +28,11 @@ export default function MobileNav() {
 
             </div>
 
-            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm absolute z-50 w-full animate__animated animate__fadeInDown  animate__faster`} id="navDropDown" aria-label="Nav">
+            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center pt-4 border-b-2 border-b-white h-3/4 items-center bg-[#000000D9] backdrop-blur-sm absolute z-50 w-full animate__animated animate__fadeInDown  animate__faster`} id="navDropDown" aria-label="Nav">
                 <Searchbar />
                 <a onClick={() => navigateAway("/")} className="nav-items">Home</a>
                 <a onClick={() => navigateAway("/saved")} className="nav-items">Saved Items</a>
-                <a onClick={() => navigateAway("/shop")} className="nav-items">SHOP</a>
+                <a onClick={() => navigateAway("/shop")} className="nav-items text-yellow-400">Shop</a>
                 <a onClick={() => navigateAway("/cart")} className="nav-items">Cart</a>
             </div>
         </>

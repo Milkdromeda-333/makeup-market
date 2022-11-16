@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import DesktopNav from "./DesktopNav.jsx";
 import MobileNav from "./MobileNav.jsx";
 
@@ -8,10 +8,8 @@ export default function Layout() {
 
     // NAV FUNCTIONALITY
 
+    // NOTE: and 1236 is when the searchbar hits the rest of the nav
     const [isDesktop, setDesktop] = useState(window.innerWidth > 1236);
-
-    // NOTE: @ 976 px my nav layout breaks bc of the searchbar
-    // and 1236 is when the searchbar hits the rest of the nav
     const updateMedia = () => {
         setDesktop(window.innerWidth > 1236);
     };
@@ -19,6 +17,14 @@ export default function Layout() {
         window.addEventListener("resize", updateMedia);
         return () => window.removeEventListener("resize", updateMedia);
     }, []);
+
+    // scrolls window to top when routes are switched
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(() => {
+            top: 0;
+        }, [location]);
+    });
 
     return (
 
@@ -65,10 +71,10 @@ export default function Layout() {
                                 <i class="bi bi-headset text-2xl hover:text-yellow-400" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-chat-left-dots text-2xl hover:text-hot-pink-50" />
+                                <i className="bi bi-chat-left-dots text-2xl hover:text-hot-pink-50" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-envelope text-2xl hover:text-yellow-400" />
+                                <i className="bi bi-envelope text-2xl hover:text-yellow-400" />
                             </a>
                         </div>
                         <div className="flex gap-2">
@@ -79,7 +85,7 @@ export default function Layout() {
                                 <i class="bi bi-twitter text-2xl hover:text-[#1DA1F2]" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-instagram text-2xl hover:text-[#C13584]" />
+                                <i className="bi bi-instagram text-2xl hover:text-[#C13584]" />
                             </a>
                         </div>
                     </div>

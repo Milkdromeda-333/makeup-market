@@ -2,9 +2,11 @@ Noteable packages: React router, boostrap icons, animate.css
 
 ## Known bugs: 
 
-- Sneak peek section in home calls twice
+- Sneak peek section in home/products context calls twice
 
 - Many images dont load. Would like to fix that somehow. Either by filtering them out, or replacing hte broken link.
+
+- Cart reciept modal is not responsive
 
 ## To be updated/upgraded/changed:
 
@@ -23,6 +25,8 @@ Noteable packages: React router, boostrap icons, animate.css
 - add a scroll to top button
 
 - fix mobile nav nav animation
+
+- have the shoping pages show loading instead of results while loading
 
 
 # COMPONENTS:
