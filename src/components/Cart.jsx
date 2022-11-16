@@ -51,11 +51,17 @@ export default function Cart() {
 
     const handlePay = () => {
 
-        window.modal.className = "block";
+        if (cartedItemsArr.length > 0) {
 
-        document.querySelector("body").style.overflow = "hidden";
+            window.modal.className = "block";
 
-        setIsDiscountApplied(false);
+            document.querySelector("body").style.overflow = "hidden";
+
+            setIsDiscountApplied(false);
+        } else {
+            return;
+        }
+
 
     };
 
