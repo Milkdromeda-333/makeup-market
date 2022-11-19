@@ -2,8 +2,6 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// add a way to search for brands
-
 export default function ShopBrands() {
 
     const brandsArr = () => {

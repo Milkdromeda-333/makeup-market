@@ -68,7 +68,7 @@ export default function Layout() {
 
                         <div className="flex gap-2 text-white">
                             <a href="tel:2223351458">
-                                <i class="bi bi-headset text-2xl hover:text-yellow-400" />
+                                <i className="bi bi-headset text-2xl hover:text-yellow-400" />
                             </a>
                             <a href="#">
                                 <i className="bi bi-chat-left-dots text-2xl hover:text-hot-pink-50" />
@@ -79,10 +79,10 @@ export default function Layout() {
                         </div>
                         <div className="flex gap-2">
                             <a href="#">
-                                <i class="bi bi-facebook text-2xl hover:text-[#4267B2]" />
+                                <i className="bi bi-facebook text-2xl hover:text-[#4267B2]" />
                             </a>
                             <a href="#">
-                                <i class="bi bi-twitter text-2xl hover:text-[#1DA1F2]" />
+                                <i className="bi bi-twitter text-2xl hover:text-[#1DA1F2]" />
                             </a>
                             <a href="#">
                                 <i className="bi bi-instagram text-2xl hover:text-[#C13584]" />
