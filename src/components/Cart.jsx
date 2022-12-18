@@ -107,7 +107,7 @@ export default function Cart() {
 
                 {/* SECTION 2 */}
 
-                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-4 relative w-3/4 min-[1065px]:w-full">
+                <section className="flex flex-col justify-center bg-black/90 rounded h-min mx-auto pb-20 pt-8 px-8 gap-4 relative w-full min-[1065px]:w-full">
 
                     <span>Grand Total: ${total > 0 ? (+total + 5.00).toFixed(2) : 0.00}</span>
 
