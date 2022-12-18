@@ -6,8 +6,6 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - Many images dont load. Would like to fix that somehow. Either by filtering them out, or replacing hte broken link.
 
-- Cart reciept modal is not responsive
-
 ## To be updated/upgraded/changed
 
 - add a way to show a certain amount of cards and have a button to render more to the screen
@@ -19,8 +17,6 @@ Noteable packages: React router, boostrap icons, animate.css
 - make navbar searchbar fully functional
 
 - add a back button
-
-- add a scroll to top button
 
 
 # COMPONENTS:
@@ -50,12 +46,3 @@ There is a useEffect hook that onMount will add an evet listener listening for c
 ### ProductCard.jsx functionality:
 
 This checks if the reciving props includes isSaved or isCarted from userShoppingContext, and if it has these props it will set it to its state and render styling based on that information. it toggles its saved and carted state brought in from the USContext.
-
-
-Q's:
-
-My products context calls twice, why?
-
-Sometimes my products context hasnt gotten its data from the api before i render a page, for example shopByCatagory because i have a variable that tries to use the map method on it. How do i fix that?
-
-If I wnat to set a scroll to top button how can i set it inside of only one component to avaoid going into each page and importing it there?
