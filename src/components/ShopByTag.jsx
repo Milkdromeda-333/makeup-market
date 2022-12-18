@@ -25,7 +25,7 @@ export default function ShopByTag() {
             <CalculateResults numResults={productsArr.length} />
 
             <div className="flex flex-wrap flex-row justify-center items-center gap-8 m-4">
-                {products.length > 0 ? productsArr || "Sorry, no products to show..." : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
+                {products.length > 0 ? productsArr || "Sorry, no products to show..." : <img src="/Ripple-1s-219px.gif" alt="loader" />}
             </div>
         </>
     );

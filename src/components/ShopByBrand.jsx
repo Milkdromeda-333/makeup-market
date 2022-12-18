@@ -24,7 +24,7 @@ export default function ShopByBrand() {
             <CalculateResults numResults={productsArr.length} />
 
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-4 text-white">
-                {productsArr.length > 0 ? productsArr : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
+                {productsArr.length > 0 ? productsArr : <img src="/Ripple-1s-219px.gif" alt="loader" />}
             </div>
         </>
     );
