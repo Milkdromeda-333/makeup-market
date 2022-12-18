@@ -66,7 +66,7 @@ export default function Home() {
 
                         </div>
                     </>
-                    : <img src="../../public/Ripple-1s-219px.gif" alt="loading" />
+                    : <img src="/Ripple-1s-219px.gif" alt="loading" />
                 }
             </div>
         </>

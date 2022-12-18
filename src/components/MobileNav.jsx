@@ -35,11 +35,11 @@ export default function MobileNav() {
 
             </div>
 
-            <div className={`${isNavOpen ? "flex" : "hidden"} flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm absolute z-50 w-full animate__animated animate__fadeInDown  animate__faster`} id="navDropDown" aria-label="Nav">
+            <div className={` absolute ${isNavOpen ? "top-20" : "top-[-100%]"} flex flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm z-50 w-full transition-all`} id="navDropDown" aria-label="Nav">
                 <Searchbar />
                 <a onClick={() => navigateAway("/")} className="nav-items">Home</a>
                 <a onClick={() => navigateAway("/saved")} className="nav-items">Saved Items</a>
-                <a onClick={() => navigateAway("/shop")} className="nav-items">SHOP</a>
+                <a onClick={() => navigateAway("/shop")} className="nav-items">Shop</a>
                 <a onClick={() => navigateAway("/cart")} className="nav-items">Cart</a>
             </div>
         </>
