@@ -6,7 +6,7 @@ import ScrollToTopBtn from "./ScrollToTopBtn";
 
 export default function Home() {
 
-    const [[products], shopByCatagoryArr] = useContext(Context);
+    const { products, shopByCatagoryArr } = useContext(Context);
 
     function productSamples() {
 
@@ -60,7 +60,7 @@ export default function Home() {
             {/* SECTION FOUR: Product cards */}
             {/* BUG: calls product samples twice, could possibly be fixed by moving the axios get call from context to this coponent*/}
             <div className="flex flex-col justify-center items-center pb-4">
-                {products ?
+                {products.length > 0 ?
                     <>
                         <h2 className="title-style mb-4" id="samples-title">Sneak Peek &gt;&gt;</h2>
                         <div className="flex flex-row flex-wrap gap-8 justify-center items-center w-full">

@@ -4,7 +4,7 @@ import axios from "axios";
 const Context = createContext(null);
 
 function ProductsContext({ children }) {
-    const [products, setProducts] = useState();
+    const [products, setProducts] = useState([]);
 
     const shopByCatagoryArr = () => {
         const categories = ["Blush",
@@ -21,7 +21,7 @@ function ProductsContext({ children }) {
         return categories;
     };
 
-    // pass axios inside of a function into provider and call it where needed
+    // pass axios inside of a function into provider and call it where needed to keep from loading twice
     useEffect(() => {
         axios.get("https://makeup-api.herokuapp.com/api/v1/products.json")
             .then(res => setProducts(res.data.filter(item => item.price > 0)))
@@ -30,7 +30,7 @@ function ProductsContext({ children }) {
     }, []);
 
     return (
-        <Context.Provider value={[[products, setProducts], shopByCatagoryArr]}>
+        <Context.Provider value={{ products, setProducts, shopByCatagoryArr }}>
             {children}
         </Context.Provider>
     );

@@ -6,7 +6,7 @@ import CalculateResults from "./CalculateResults";
 
 export default function ShopByPrice() {
 
-    const [[products,]] = useContext(Context);
+    const { products } = useContext(Context);
 
     const orderedProductsArr = () => {
         return products.sort((current, prev) => current.price - prev.price).map(product => <ProductCard key={product.key} {...product} />);
@@ -18,7 +18,7 @@ export default function ShopByPrice() {
             <CalculateResults numResults={orderedProductsArr().length} />
 
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-4">
-                {products ? orderedProductsArr() : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
+                {products.length > 0 ? orderedProductsArr() : <img src="/Ripple-1s-219px.gif" alt="loader" />}
             </div>
 
         </>

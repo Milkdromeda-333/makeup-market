@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export default function ShopCategories() {
 
-    const [, categoriesArr] = useContext(Context);
+    const { shopByCatagoryArr } = useContext(Context);
 
-    const categoriesCards = categoriesArr().map(category => <Link to={"/shop/shop-by-category/" + category} className="shop-card mt-4 w-3/4 md:w-1/4">{category}</Link>);
+    const categoriesCards = shopByCatagoryArr().map(category => <Link to={"/shop/shop-by-category/" + category} className="shop-card mt-4 w-3/4 md:w-1/4" key={category}>{category}</Link>);
 
     return (
         <>

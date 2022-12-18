@@ -8,7 +8,7 @@ export default function Cart() {
 
     // STATE, VARIABLES and CONTEXTS
 
-    const [[products]] = useContext(Context);
+    const { products } = useContext(Context);
     const { cartedItems, setCartedItems, appliedDiscounts, setAppliedDiscounts } = useContext(USContext);
 
     const [discountCodeInput, setDiscountCodeInput] = useState("");
@@ -98,7 +98,7 @@ export default function Cart() {
                     {cartedItems.length ? cartedItemsCards : <span className="text-xl text-center p-8">Nothing here. Start shopping!</span>}
 
                     {cartedItems.length > 0 && (
-                        <div className="text-xl md:ml-auto">
+                        <div className="text-xl mt-4 md:ml-auto">
                             <p className="md:ml-auto underline">Total: </p>
                             <span className="text-green-500">${(totalArr.reduce((a, b) => a + b)).toFixed(2)}</span>
                         </div>
@@ -120,7 +120,7 @@ export default function Cart() {
                     </div>
 
                     {/* DISCOUNT FORM */}
-                    <div className="flex flex-col text-center mt-2">
+                    <div className="flex flex-col mt-2">
 
                         <p>Enter discount code:</p>
 

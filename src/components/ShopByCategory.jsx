@@ -26,7 +26,7 @@ export default function ShopByCatagory() {
             <CalculateResults numResults={productsArr.length} />
 
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-8">
-                {products.length > 0 ? productsArr : <img src="../../public/Ripple-1s-219px.gif" alt="loader" />}
+                {products.length > 0 ? productsArr : <img src="/Ripple-1s-219px.gif" alt="loader" />}
             </div>
         </>
     );

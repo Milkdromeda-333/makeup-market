@@ -7,7 +7,7 @@ import Result from "./Result.jsx";
 
 export default function Shop() {
     const [userInput, setUserInput] = useState("");
-    const [[products]] = useContext(Context);
+    const { products } = useContext(Context);
     const [resultsCards, setResultsCards] = useState(null);
 
     const handleInputChange = (e) => {
