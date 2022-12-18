@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "./ProductsContext";
 import ProductCard from "./ProductCard";
+import ScrollToTopBtn from "./ScrollToTopBtn";
 
 export default function Home() {
 

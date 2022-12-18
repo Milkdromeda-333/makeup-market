@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import DesktopNav from "./DesktopNav.jsx";
 import MobileNav from "./MobileNav.jsx";
+import ScrollToTopBtn from "./ScrollToTopBtn.jsx";
 
 export default function Layout() {
 
@@ -91,6 +92,7 @@ export default function Layout() {
                     </div>
 
                 </div>
+                <ScrollToTopBtn />
             </footer>
         </div>
     );

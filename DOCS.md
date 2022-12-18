@@ -8,9 +8,7 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - Cart reciept modal is not responsive
 
-## To be updated/upgraded/changed:
-
-- add a full product page after clicking on a product
+## To be updated/upgraded/changed
 
 - add a way to show a certain amount of cards and have a button to render more to the screen
 
