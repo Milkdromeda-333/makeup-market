@@ -24,8 +24,6 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - add a scroll to top button
 
-- have the shoping pages show loading instead of results while loading
-
 
 # COMPONENTS:
 
