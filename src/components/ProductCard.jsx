@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useContext, useState } from "react";
 import { Context } from "./UserShoppingContext";
 
@@ -10,7 +9,6 @@ export default function ProductCard(props) {
 
     const [isCarted, setIsCarted] = useState(props.isCarted || false);
 
-    // allows this item to be saved and unsaved
     function handleSaveClick() {
         if (!isSaved) {
             setSavedItems(prev => [...prev, props]);
@@ -21,7 +19,6 @@ export default function ProductCard(props) {
         }
     }
 
-    // handles cart functionlity. adds and deletes form cart.
     function handleCartItem() {
         if (!isCarted) {
 

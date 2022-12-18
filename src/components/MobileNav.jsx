@@ -7,16 +7,8 @@ import { useState } from 'react';
 export default function MobileNav() {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const [isActive, setIsActive] = useState(false);
 
     const navToggleFunc = () => setIsNavOpen(prev => !prev);
-
-    // TRYING TO ANIMATE EXIT
-    // const navToggleFunc = () => {
-    //     document.querySelector("#navDropDown").classList.replace("animate__fadeInDown", "animate__fadeOutUp");
-    //     setIsNavOpen(prev => !prev);
-    //     console.log(document.querySelector("#navDropDown").classList);
-    // };
 
     const navigate = useNavigate();
 

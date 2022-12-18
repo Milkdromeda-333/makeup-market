@@ -56,7 +56,7 @@ export default function Home() {
             </section>;
 
             {/* SECTION FOUR: Product cards */}
-            {/* BUG: calls product samples twice*/}
+            {/* BUG: calls product samples twice, could possibly be fixed by moving the axios get call from context to this coponent*/}
             <div className="flex flex-col justify-center items-center pb-4">
                 {products ?
                     <>

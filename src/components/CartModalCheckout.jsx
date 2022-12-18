@@ -13,7 +13,7 @@ export default function CartModalCheckout(props) {
 
                 <p className='text-2xl mt-2 text-yellow-400'>Heres your recipt:</p>
 
-                <div className={props.cartedItemsArr.length > 5 && "overflow-y-scroll pr-8"}>
+                <div className={props.cartedItemsArr.length > 5 ? "overflow-y-scroll pr-8" : undefined}>
 
                     {props.cartedItemsArr.map(item => <CartedItemCard key={item.id} {...item} isBeforePurchase={false} />)}
 

@@ -1,6 +1,6 @@
 # Makeup Market
 
-This project is a mock makeup company, made with React and bundled with Vite, styled with TailwindCSS, Icons8 icons, and google fonts, and excitement.
+This project is a mock makeup company, made with React and bundled with Vite, styled with TailwindCSS, and excitement. This was assigned to me to build by my technical bootcamp to practice interacting with API's, and I had a blast practing my coding, problem solving, and design skills.
 
 With this project I got the chance to practice:
 
@@ -46,7 +46,3 @@ Credits:
 - loading gif from loading.io
 
 - stylized scrollbar made with codepen.io/stephenpaton-tech/full/JjRvGmY
-
-Notes:
-
-- For some reason i needed to add `mode: jit' to my tailwind config to make my arbitrary value for a media query work. Not too sure what it does but I'm thankful that it worked 🤷‍♀️
