@@ -19,7 +19,7 @@ export default function MobileNav() {
 
     return (
         <>
-            <div className="grid place-items-center w-full bg-black p-4 border-b-[1px] relative">
+            <div className="grid place-items-center w-full bg-black p-4 border-b-[1px] relative z-10">
 
                 <Logo fs="18px" className="px-8" />
 
@@ -27,7 +27,7 @@ export default function MobileNav() {
 
             </div>
 
-            <div className={` absolute ${isNavOpen ? "top-20" : "top-[-100%]"} flex flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm z-50 w-full transition-all`} id="navDropDown" aria-label="Nav">
+            <div className={` absolute ${isNavOpen ? "top-20" : "top-[-100%]"} flex flex-col text-center pt-4 items-center bg-[#000000D9] backdrop-blur-sm z-[1] w-full transition-all`} id="navDropDown" aria-label="Nav">
                 <Searchbar />
                 <a onClick={() => navigateAway("/")} className="nav-items">Home</a>
                 <a onClick={() => navigateAway("/saved")} className="nav-items">Saved Items</a>
