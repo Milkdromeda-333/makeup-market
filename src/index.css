@@ -100,6 +100,13 @@ footer li {
     transform: scale(2);
 }
 
+.nav-items:hover{
+    /* color: gray; */
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+}
+
 @media screen and (max-width:500px) {
     .sm-product-card-label {
         width: 200px;

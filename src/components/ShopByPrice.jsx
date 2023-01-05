@@ -9,7 +9,7 @@ export default function ShopByPrice() {
     const { products } = useContext(Context);
 
     const orderedProductsArr = () => {
-        return products.sort((current, prev) => current.price - prev.price).map(product => <ProductCard key={product.key} {...product} />);
+        return products.sort((current, prev) => current.price - prev.price).map(product => <ProductCard key={product.id} {...product} />);
     };
 
     return (

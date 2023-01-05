@@ -14,6 +14,7 @@ export default function Layout() {
     const updateMedia = () => {
         setDesktop(window.innerWidth > 1236);
     };
+
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
         return () => window.removeEventListener("resize", updateMedia);
@@ -59,6 +60,7 @@ export default function Layout() {
                         {/* EMAIL SECTION */}
                         <div className="flex justify-center items-end flex-wrap">
                             <input type="email" name="email" className="h-min w-3/4 mr-2 outline-none border-hot-pink-50 border-b-2 bg-transparent md:w-auto" placeholder="email" />
+
                             <button className="border-2 border-hot-pink-50 px-3 rounded mt-2 w-3/4 md:w-auto hover:bg-hot-pink-50 hover:text-white active:border-black active:bg-hot-pink-100">submit</button>
                         </div>
                     </div>
@@ -68,24 +70,24 @@ export default function Layout() {
                         <h3 className="text-4xl text-center underline decoration-hot-pink-50 pb-2">Get in touch:</h3>
 
                         <div className="flex gap-2 text-white">
-                            <a href="tel:2223351458">
+                            <a href="tel:2223351458" title="phone">
                                 <i className="bi bi-headset text-2xl hover:text-yellow-400" />
                             </a>
-                            <a href="#">
+                            <a href="#" title="live chat">
                                 <i className="bi bi-chat-left-dots text-2xl hover:text-hot-pink-50" />
                             </a>
-                            <a href="#">
+                            <a href="#" title="email">
                                 <i className="bi bi-envelope text-2xl hover:text-yellow-400" />
                             </a>
                         </div>
                         <div className="flex gap-2">
-                            <a href="#">
+                            <a href="#" title="facebook">
                                 <i className="bi bi-facebook text-2xl hover:text-[#4267B2]" />
                             </a>
-                            <a href="#">
+                            <a href="#" title="twitter">
                                 <i className="bi bi-twitter text-2xl hover:text-[#1DA1F2]" />
                             </a>
-                            <a href="#">
+                            <a href="#" title="instagram">
                                 <i className="bi bi-instagram text-2xl hover:text-[#C13584]" />
                             </a>
                         </div>

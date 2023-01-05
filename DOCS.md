@@ -18,9 +18,15 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - add a back button
 
-- fix https get request @ shop theres an error about the http request from http://makeup-api.herokuapp.com/api/v1/products.json?product_type=Nail%20Polish at https://makeup-market-project.surge.sh/shop/shop-by-category/Nail%20Polish
+
+## Questions:
+Q: I have a state that saves all products form a get request to the api. Should it be sved to a context, or is there a way for me the make a component that will export the products state to avoid re-declaring a producst state. Will context call it only once?
+
+A: Use context to import products because a lot of modules need this array, and if I did it the other way which was just import the axios request I'd have to set products state again in several differnet places. And, yes in context it only calls once!
 
 
+## Learnings:
+- Aria-label is to label a element that has no aparent use for folks who cannot see the button with their eyes. Non-semantic tags cant have this unless it is attributed a role.
 
 # COMPONENTS:
 

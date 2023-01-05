@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "./ProductsContext";
 import ProductCard from "./ProductCard";
-import ScrollToTopBtn from "./ScrollToTopBtn";
+import { Context } from "./ProductsContext";
+import { useContext } from "react";
 
 export default function Home() {
 
-    const { products, shopByCatagoryArr } = useContext(Context);
+    const { products } = useContext(Context);
 
     function productSamples() {
 
@@ -15,6 +14,21 @@ export default function Home() {
             indices.push(Math.floor(Math.random() * products.length));
         }
         return indices.map(index => <ProductCard {...products[index]} key={products[index].id} />);
+    };
+
+    const shopByCatagoryArr = () => {
+        const categories = ["Blush",
+            "Mascara",
+            "Lipstick",
+            "Foundation",
+            "Nail Polish",
+            "Lip Liner",
+            "Eyeshadow",
+            "Eyeliner",
+            "Eyebrow",
+            "Bronzer"];
+
+        return categories;
     };
 
     return (
@@ -42,7 +56,7 @@ export default function Home() {
                 <h3 className="title-style">Shop product category &gt;&gt; </h3>
 
                 <div className="flex flex-wrap justify-center items-center">
-                    {shopByCatagoryArr().map(category => <Link to={"shop/shop-by-category/" + category} className="sm-product-card-label py-4 md:py-0">{category}</Link>)}
+                    {shopByCatagoryArr().map(category => <Link to={"shop/shop-by-category/" + category} className="sm-product-card-label py-4 md:py-0" key={category}>{category}</Link>)}
                 </div>
             </div>
 
@@ -58,7 +72,6 @@ export default function Home() {
             </section>;
 
             {/* SECTION FOUR: Product cards */}
-            {/* BUG: calls product samples twice, could possibly be fixed by moving the axios get call from context to this coponent*/}
             <div className="flex flex-col justify-center items-center pb-4">
                 {products.length > 0 ?
                     <>

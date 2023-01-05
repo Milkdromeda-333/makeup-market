@@ -1,9 +1,9 @@
-import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import CalculateResults from "./CalculateResults";
+import { getProductsByCategory } from "../api/Axios";
 
 
 export default function ShopByCatagory() {
@@ -15,7 +15,7 @@ export default function ShopByCatagory() {
     const productsArr = products.map(item => <ProductCard key={item.id} {...item} />);
 
     useEffect(() => {
-        axios.get(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`)
+        getProductsByCategory(category)
             .then(res => setProducts([...res.data].filter(item => item.price > 0)))
             .catch(err => console.log(err));
     }, []);

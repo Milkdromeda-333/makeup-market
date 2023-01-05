@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import ProductCard from "./ProductCard";
 import CalculateResults from "./CalculateResults";
+import { getProductsByTag } from "../api/Axios";
 
 export default function ShopByTag() {
 
@@ -12,8 +12,9 @@ export default function ShopByTag() {
 
     const productsArr = products.map(product => <ProductCard key={product.id} {...product} />);
 
+    // gets products by tags and sets to state
     useEffect(() => {
-        axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${tag.split("-").join("+")}`)
+        getProductsByTag(tag)
             .then(res => setProducts([...res.data].filter(item => item.price > 0)))
             .catch(err => console.log(err));
 

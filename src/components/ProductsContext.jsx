@@ -1,36 +1,21 @@
 import { createContext, useEffect, useState } from "react";
-import axios from "axios";
+import { getAllProducts } from "../api/Axios";
 
-const Context = createContext(null);
+const Context = createContext();
 
 function ProductsContext({ children }) {
     const [products, setProducts] = useState([]);
 
-    const shopByCatagoryArr = () => {
-        const categories = ["Blush",
-            "Mascara",
-            "Lipstick",
-            "Foundation",
-            "Nail Polish",
-            "Lip Liner",
-            "Eyeshadow",
-            "Eyeliner",
-            "Eyebrow",
-            "Bronzer"];
-
-        return categories;
-    };
-
     // pass axios inside of a function into provider and call it where needed to keep from loading twice
     useEffect(() => {
-        axios.get("https://makeup-api.herokuapp.com/api/v1/products.json")
+        getAllProducts()
             .then(res => setProducts(res.data.filter(item => item.price > 0)))
             .catch(err => console.log(err));
 
     }, []);
 
     return (
-        <Context.Provider value={{ products, setProducts, shopByCatagoryArr }}>
+        <Context.Provider value={{ products }}>
             {children}
         </Context.Provider>
     );

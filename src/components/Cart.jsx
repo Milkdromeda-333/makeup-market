@@ -6,8 +6,6 @@ import { Context } from "./ProductsContext.jsx";
 
 export default function Cart() {
 
-    // STATE, VARIABLES and CONTEXTS
-
     const { products } = useContext(Context);
     const { cartedItems, setCartedItems, appliedDiscounts, setAppliedDiscounts } = useContext(USContext);
 
@@ -61,8 +59,6 @@ export default function Cart() {
         } else {
             return;
         }
-
-
     };
 
     const closeModal = () => {
