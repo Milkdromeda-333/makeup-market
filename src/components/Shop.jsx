@@ -1,25 +1,7 @@
-import { useContext, useEffect } from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "./ProductsContext.jsx";
-import Result from "./Result.jsx";
-
+import ShopSearchbar from "./ShopSearchbar.jsx";
 
 export default function Shop() {
-    const [userInput, setUserInput] = useState("");
-    const { products } = useContext(Context);
-    const [resultsCards, setResultsCards] = useState(null);
-
-    const handleInputChange = (e) => {
-        setUserInput(e.target.value);
-    };
-
-    useEffect(() => {
-        if (products) {
-            const matchedProducts = products.filter(item => item.name.toUpperCase().startsWith(userInput.toUpperCase()));
-            setResultsCards(matchedProducts.map(item => <Result {...item} />));
-        }
-    }, [userInput]);
 
     const shopByTagArr = () => {
         const tags = ["Fair Trade",
@@ -35,32 +17,17 @@ export default function Shop() {
 
     };
 
-    useEffect(() => {
-
-        const searchbar = document.querySelector("#search");
-        function unfocus() {
-            if (searchbar !== document.activeElement) {
-                setUserInput("");
-            }
-        };
-        window.addEventListener("click", unfocus);
-
-        return () => window.removeEventListener("click", unfocus);
-    }, []);
 
     return (
         <div className="m-4 relative">
 
             <h2 className="title-style relative">&gt; &gt; Shop</h2>
 
-            <div className="grid relative z-[10] place-items-center mt-4">
-                <input type="search" className="rounded-lg border-b-2 w-3/4 pl-12 pr-4 py-2 searchbar" value={userInput} onChange={handleInputChange} placeholder="Search" id="search" />
-
-                <div className="w-3/4 max-h-[40vh] overflow-y-scroll" id="resultsWrapper">{resultsCards && userInput !== "" ? resultsCards : null}</div>
-            </div>
+            <ShopSearchbar />
 
             {/* Cards */}
             <div className="relative z[1]">
+
                 <section className="flex flex-col justify-center items-center gap-4 text-center md:flex-row">
 
                     {/* BY BRAND */}
@@ -86,6 +53,7 @@ export default function Shop() {
                     <div className="flex flex-row flex-wrap justify-center text-center">
                         {shopByTagArr()}
                     </div>
+
                 </div >
             </div>
         </div >

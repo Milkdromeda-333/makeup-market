@@ -9,15 +9,14 @@ export default function CartModalCheckout(props) {
 
                 <span className='bi bi-x text-white text-5xl md:text-6xl ml-auto' onClick={props.closeModal}></span>
 
-                <h2 className='text-lg md:text-3xl mt-2 px-2 text-center'>
+                <span className='text-lg md:text-3xl mt-2 px-2 text-center'>
 
-                    Thank you for your purchase. What a great value for
+                    Thank you for your purchase. What a great value for&nbsp;
 
                     <span className="text-green-500">
-                        ${props.total.toFixed(2)}
+                        ${props.total.toFixed(2)}!
                     </span>
-                    !
-                </h2>
+                </span>
 
                 <p className='text-lg md:text-2xl mt-2 text-yellow-400 px-4'>Heres your recipt:</p>
 
