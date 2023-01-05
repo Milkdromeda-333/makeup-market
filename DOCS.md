@@ -20,7 +20,6 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - fix https get request @ shop theres an error about the http request from http://makeup-api.herokuapp.com/api/v1/products.json?product_type=Nail%20Polish at https://makeup-market-project.surge.sh/shop/shop-by-category/Nail%20Polish
 
-- dont allow the logo to be selectable/highlighted
 
 
 # COMPONENTS:

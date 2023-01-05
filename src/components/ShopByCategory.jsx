@@ -15,7 +15,7 @@ export default function ShopByCatagory() {
     const productsArr = products.map(item => <ProductCard key={item.id} {...item} />);
 
     useEffect(() => {
-        axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`)
+        axios.get(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`)
             .then(res => setProducts([...res.data].filter(item => item.price > 0)))
             .catch(err => console.log(err));
     }, []);
