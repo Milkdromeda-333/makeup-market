@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import ProductCard from "./ProductCard";
-import { Context } from "./ProductsContext";
+import { Context } from "../context//ProductsContext";
 import CalculateResults from "./CalculateResults";
 
 

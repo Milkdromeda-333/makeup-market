@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from "react";
-import { Context as USContext } from "./UserShoppingContext.jsx";
+import { Context as USContext } from "../context/UserShoppingContext.jsx";
 import CartedItemCard from "./CartedItemCard.jsx";
 import CartModalCheckout from "./CartModalCheckout.jsx";
-import { Context } from "./ProductsContext.jsx";
+import { Context } from "../context/ProductsContext.jsx";
 
 export default function Cart() {
 

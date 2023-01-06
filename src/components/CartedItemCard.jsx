@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Context } from "./UserShoppingContext";
+import { Context } from "../context//UserShoppingContext";
 
 export default function CartedItemCard(props) {
 

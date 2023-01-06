@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { ProductsContext } from "./components/ProductsContext.jsx";
-import { UserShoppingContext } from "./components/UserShoppingContext.jsx";
+import { ProductsContext } from "./context/ProductsContext.jsx";
+import { UserShoppingContext } from "./context/UserShoppingContext.jsx";
 import Layout from "./components/Layout.jsx";
 import Shop from "./components/Shop";
 import Home from "./components/Home";

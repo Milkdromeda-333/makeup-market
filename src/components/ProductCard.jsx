@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Context } from "./UserShoppingContext";
+import { Context } from "../context/UserShoppingContext";
 
 export default function ProductCard(props) {
 

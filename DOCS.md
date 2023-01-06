@@ -6,6 +6,8 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - Many images dont load. Would like to fix that somehow. Either by filtering them out, or replacing hte broken link.
 
+- The way that i implemented my loader gif is if the array is not populated that the componennt renders the loader. I need a way to actually render the loader until the get request comes back. Same for the results.jsx
+
 ## To be updated/upgraded/changed
 
 - add a way to show a certain amount of cards and have a button to render more to the screen
@@ -17,6 +19,8 @@ Noteable packages: React router, boostrap icons, animate.css
 - make navbar searchbar fully functional
 
 - add a back button
+
+- add a filter component to filter the shopbyprice comp.
 
 
 ## Questions:

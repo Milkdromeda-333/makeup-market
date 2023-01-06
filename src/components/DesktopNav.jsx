@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-import { Context } from "./UserShoppingContext.jsx";
+import { Context } from "../context/UserShoppingContext.jsx";
 import Searchbar from "./Searchbar.jsx";
 import { useContext } from 'react';
 

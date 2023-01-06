@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useContext, useEffect } from "react";
 import Result from "./Result.jsx";
-import { Context } from "./ProductsContext.jsx";
+import { Context } from "../context/ProductsContext.jsx";
 
 export default function ShopSearchbar() {
 
-    
+
     const [userInput, setUserInput] = useState("");
     const [resultsCards, setResultsCards] = useState(null);
     const { products } = useContext(Context);
-    
-    
+
+
     const handleInputChange = (e) => {
         setUserInput(e.target.value);
     };
@@ -22,7 +22,7 @@ export default function ShopSearchbar() {
             setResultsCards(matchedProducts.map(item => <Result {...item} />));
         }
     }, [userInput]);
-    
+
     // adds an event listener to the window that will unfocus the
     // searchbar if the window is clicked if its focused.
     useEffect(() => {

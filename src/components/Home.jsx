@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import { Context } from "./ProductsContext";
+import { Context } from "../context/ProductsContext";
 import { useContext } from "react";
 
 export default function Home() {
@@ -73,7 +73,7 @@ export default function Home() {
 
             {/* SECTION FOUR: Product cards */}
             <div className="flex flex-col justify-center items-center pb-4">
-                {products.length > 0 ?
+                {products?.length > 0 ?
                     <>
                         <h2 className="title-style mb-4" id="samples-title">Sneak Peek &gt;&gt;</h2>
                         <div className="flex flex-row flex-wrap gap-8 justify-center items-center w-full">
