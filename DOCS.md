@@ -6,7 +6,8 @@ Noteable packages: React router, boostrap icons, animate.css
 
 - Many images dont load. Would like to fix that somehow. Either by filtering them out, or replacing hte broken link.
 
-- The way that i implemented my loader gif is if the array is not populated that the componennt renders the loader. I need a way to actually render the loader until the get request comes back. Same for the results.jsx
+x The way that i implemented my loader gif is if the array is not populated that the componennt renders the loader. I need a way to actually render the loader until the get request comes back. Same for the calculateresults.jsx
+    - update: i fixed it completely for shop by tags, will need to figure out a smart or easy way to get the other modules that import calculateResults to be able to work well with it.
 
 ## To be updated/upgraded/changed
 

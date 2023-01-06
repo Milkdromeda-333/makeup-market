@@ -10,7 +10,7 @@ export default function ShopByBrand() {
     const { brand } = useParams();
     const [products, setProducts] = useState([]);
 
-    const productsArr = products.filter(item => item.price > 0).map(item => <ProductCard key={item.id} {...item} />);
+    const productsArr = () => products.filter(item => item.price > 0).map(item => <ProductCard key={item.id} {...item} />);
 
     useEffect(() => {
         getProductaByBrand(brand)
@@ -21,10 +21,11 @@ export default function ShopByBrand() {
     return (
         <>
             <h2 className="title-style">&gt; &gt; Shop {brand}</h2>
-            <CalculateResults numResults={productsArr.length} />
+
+            {<CalculateResults data={productsArr()?.length} />}
 
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-4 text-white">
-                {productsArr.length > 0 ? productsArr : <img src="/Ripple-1s-219px.gif" alt="loader" />}
+                {products?.length > 0 ? productsArr() : <img src="/Ripple-1s-219px.gif" alt="loader" />}
             </div>
         </>
     );
