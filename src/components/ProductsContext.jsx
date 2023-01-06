@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getAllProducts } from "../api/Axios";
 
-const Context = createContext();
+const Context = createContext([]);
 
 function ProductsContext({ children }) {
     const [products, setProducts] = useState([]);

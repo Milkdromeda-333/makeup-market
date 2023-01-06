@@ -20,21 +20,6 @@ With this project I got the chance to practice:
 
 - Working on a different branch from main to preserve a previous version while I work on a new feature.
 
-
-I learned:
-
-- To get the footer to stay at the bottom (wrapper min-height: 100vh and margin-top: auto on footer)
-
-- To truncate numbers so that they only have two digits at the end. You use .toFixed(2) on it.
-
-- To extract numbers from a string using "+" ex. (+"10") === 10
-
-- That one must commit more often.. just in case
-
-- Googling and using dev tools very often will result in more bugs squashed quicker #AvidGoogler
-
-- There will be many features you want to add.. remember the MVP! Spend your time wisely.
-
 Credits:
 
 - Images from unsplash.com

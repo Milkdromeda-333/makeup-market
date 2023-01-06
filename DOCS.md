@@ -20,13 +20,27 @@ Noteable packages: React router, boostrap icons, animate.css
 
 
 ## Questions:
+
 Q: I have a state that saves all products form a get request to the api. Should it be sved to a context, or is there a way for me the make a component that will export the products state to avoid re-declaring a producst state. Will context call it only once?
 
 A: Use context to import products because a lot of modules need this array, and if I did it the other way which was just import the axios request I'd have to set products state again in several differnet places. And, yes in context it only calls once!
 
 
 ## Learnings:
+
 - Aria-label is to label a element that has no aparent use for folks who cannot see the button with their eyes. Non-semantic tags cant have this unless it is attributed a role.
+
+- To get the footer to stay at the bottom (wrapper min-height: 100vh and margin-top: auto on footer)
+
+- To truncate numbers so that they only have two digits at the end. You use .toFixed(2) on it.
+
+- To extract numbers from a string using "+" ex. (+"10") === 10
+
+- That one must commit more often.. just in case
+
+- Googling and using dev tools very often will result in more bugs squashed quicker #AvidGoogler
+
+- There will be many features you want to add.. remember the MVP! Spend your time wisely.
 
 # COMPONENTS:
 
