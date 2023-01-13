@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CalculateResults from "./CalculateResults";
 import ProductCard from "./ProductCard";
 import { getProductaByBrand } from "../api/Axios";
 
@@ -21,8 +20,6 @@ export default function ShopByBrand() {
     return (
         <>
             <h2 className="title-style">&gt; &gt; Shop {brand}</h2>
-
-            {<CalculateResults data={productsArr()?.length} />}
 
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 m-4 text-white">
                 {products?.length > 0 ? productsArr() : <img src="/Ripple-1s-219px.gif" alt="loader" />}

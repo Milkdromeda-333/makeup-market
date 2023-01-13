@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import CalculateResults from "./CalculateResults";
 import { getProductsByTag } from "../api/Axios";
 
 export default function ShopByTag() {
@@ -11,7 +10,6 @@ export default function ShopByTag() {
     // filtered products
     const [products, setProducts] = useState();
     const [results, setResults] = useState(<img src='/Ripple-1s-219px.gif' alt='loader' />);
-    const [calculateResultsData, setCalculateResultsData] = useState(null);
 
     const productsArr = () => products?.map(product => <ProductCard key={product.id} {...product} />);
 
@@ -29,11 +27,9 @@ export default function ShopByTag() {
         const handleResults = () => {
             if (productsArr().length === 0) {
                 setResults(<span className="text-white text-2xl">Sorry, no products are listed!</span>);
-                setCalculateResultsData("0");
                 return;
             }
             setResults(productsArr);
-            setCalculateResultsData(productsArr().length);
         };
 
         if (products) {
@@ -44,8 +40,6 @@ export default function ShopByTag() {
     return (
         <>
             <h2 className="title-style">&gt; &gt; Shop {tag} Products</h2>
-
-            <CalculateResults data={calculateResultsData} />
 
             <div className="flex flex-wrap flex-row justify-center items-center gap-8 m-4">
                 {results}

@@ -1,11 +1,12 @@
+import { useEffect } from "react";
 import { useContext, useState } from "react";
 import { Context } from "../context/UserShoppingContext";
 
 export default function ProductCard(props) {
 
-    const { setSavedItems, setCartedItems } = useContext(Context);
+    const { savedItems, setSavedItems, setCartedItems } = useContext(Context);
 
-    const [isSaved, setIsSaved] = useState(props.isSaved || false);
+    const [isSaved, setIsSaved] = useState(null);
 
     const [isCarted, setIsCarted] = useState(props.isCarted || false);
 
@@ -32,8 +33,18 @@ export default function ProductCard(props) {
         }
     }
 
+    useEffect(() => {
+        setIsSaved(function () {
+            for (let i = 0; i < savedItems.length; i++) {
+                if (savedItems[i].id === props.id) {
+                    return true;
+                }
+            }
+        });
+    }, [isSaved]);
+
     return (
-        <div className="outline outline-white bg-black flex flex-col w-[80%] min-[506px]:w-[350px] justify-center text-center text-white relative animate__animated animate__fadeInUp">
+        <div className="outline outline-white bg-black flex flex-col w-[80%] min-[506px]:w-[350px] justify-center text-center text-white relative">
 
             {/* toggles the appearance of the saved icon */}
             {isSaved ? <span className="bi bi-suit-heart-fill absolute top-0 right-2 text-2xl bg-white px-2  text-red-600 hover:text-red-700" onClick={handleSaveClick} role="button" aria-label="save item"></span> : <span className="bi bi-suit-heart text-slate-900 absolute top-0 right-2 text-2xl bg-white px-2 h-min hover:text-red-400" onClick={handleSaveClick} role="button" aria-label="unsave item"></span>}
